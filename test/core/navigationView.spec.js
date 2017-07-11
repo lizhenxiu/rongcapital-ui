@@ -24,7 +24,7 @@ ItemView.propTypes = {
     next: PropTypes.func,
 };
 
-describe.only('core component navigationView', () => {
+describe('core component navigationView', () => {
 
     it('initialize by default', () => {
         const wrapper = shallow(<NavigationView />);
