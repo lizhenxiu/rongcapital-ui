@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import clazz from 'classnames';
-//import { autobind } from 'core-decorators';
 
 import View from './View';
 
@@ -66,7 +65,6 @@ const Controller = (View) =>
             this.prev = this.prev.bind(this);
         }
 
-        //@autobind
         next() {
             const index = this.state.index + 1;
             const { children } = this.props;
@@ -80,7 +78,6 @@ const Controller = (View) =>
             afterNext && afterNext();
         }
 
-        //@autobind
         prev() {
             const index = this.state.index - 1;
 
@@ -101,12 +98,12 @@ const Controller = (View) =>
 
         render() {
             const newProps = {
-                ...this.props,
                 next: this.next,
                 prev: this.prev,
                 index: this.state.index,
             };
-            return <View { ...newProps } />;
+
+            return <View { ...this.props } { ...newProps } />;
         }
     };
 
