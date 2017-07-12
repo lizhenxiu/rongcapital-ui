@@ -36,12 +36,6 @@
 ## 启动开发服务
 `npm run dev` 开始开发
 
-## 重要依赖
-
-### 组件类
-
-- [react-custom-scrollbars](https://github.com/malte-wessel/react-custom-scrollbars)
-
 ## 工具
 
 - [Enzyme](http://airbnb.io/enzyme/docs/api/index.html)
@@ -49,7 +43,7 @@
 
 ## 其他依赖
 
-- [core-decorator](https://github.com/jayphelps/core-decorators.js)
+- [react-custom-scrollbars](https://github.com/malte-wessel/react-custom-scrollbars)
 
 ## Core components
 
@@ -218,8 +212,3 @@
 
 - **Drag & Drop**
 	可拖拽视觉组件, 继承自DragDropView视图组件
-
-## TODO
-
-- remove `core-decorator`
-- fix errors in navigationView.spec.js
