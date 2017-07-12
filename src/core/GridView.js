@@ -64,10 +64,8 @@ class GridView extends CollectionView {
         const newChildren = gridLayout(cells, rows, columns);
         const newProps = {
             ...elementTree.props,
-            ...{
-                className: clazz(elementTree.props.className, componentStyles.gridView),
-                children: newChildren,
-            }
+            className: clazz(elementTree.props.className, componentStyles.gridView),
+            children: newChildren,
         };
 
         return React.cloneElement(elementTree, newProps);

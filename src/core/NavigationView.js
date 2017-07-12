@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import clazz from 'classnames';
+import { autobind } from 'core-decorators';
 
 import View from './View';
 
@@ -17,16 +18,12 @@ class NavigationView extends View {
         const elementTree = super.render();
         const newProps = {
             ...elementTree.props,
-            ...{
-                className: clazz(elementTree.props.className, componentStyles.navigationView),
-                children: React.Children.map(children, (item, idx) => idx === index ? React.cloneElement(item, {
-                    ...item.props,
-                    ...{
-                        next,
-                        prev,
-                    }
-                }): void 0),
-            },
+            className: clazz(elementTree.props.className, componentStyles.navigationView),
+            children: React.Children.map(children, (item, idx) => idx === index ? React.cloneElement(item, {
+                ...item.props,
+                next,
+                prev,
+            }): void 0),
         };
 
         return React.cloneElement(elementTree, newProps);
@@ -60,11 +57,9 @@ const Controller = (View) =>
                 // 子视图索引状态
                 index,
             };
-
-            this.next = this.next.bind(this);
-            this.prev = this.prev.bind(this);
         }
 
+        @autobind
         next() {
             const index = this.state.index + 1;
             const { children } = this.props;
@@ -78,6 +73,7 @@ const Controller = (View) =>
             afterNext && afterNext();
         }
 
+        @autobind
         prev() {
             const index = this.state.index - 1;
 

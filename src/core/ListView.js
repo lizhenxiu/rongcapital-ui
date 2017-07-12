@@ -26,10 +26,8 @@ class ListView extends CollectionView {
         const { children } = elementTree.props;
         const newProps = {
             ...elementTree.props,
-            ...{
-                className: clazz(elementTree.props.className, componentStyles.listView),
-                children: listLayout(React.Children.toArray(children)),
-            },
+            className: clazz(elementTree.props.className, componentStyles.listView),
+            children: listLayout(React.Children.toArray(children)),
         };
 
         return React.cloneElement(elementTree, newProps);

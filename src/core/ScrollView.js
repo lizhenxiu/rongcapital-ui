@@ -25,10 +25,8 @@ class ScrollView extends View {
         const elementTree = super.render();
         const newProps = {
             ...elementTree.props,
-            ...{
-                className: clazz(elementTree.props.className, componentStyles.scrollView),
-                children: (<Scrollbars { ...defaultProps }>{  elementTree.props.children  }</Scrollbars>),
-            }
+            className: clazz(elementTree.props.className, componentStyles.scrollView),
+            children: (<Scrollbars { ...defaultProps }>{  elementTree.props.children  }</Scrollbars>),
         };
         return React.cloneElement(elementTree, newProps);
     }

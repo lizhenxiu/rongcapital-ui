@@ -27,9 +27,7 @@ class CollectionView extends View {
 
         const newProps = {
             ...props,
-            ...{
-                className: clazz(props.className, componentStyles.collectionView),
-            },
+            className: clazz(props.className, componentStyles.collectionView),
         };
 
         const { children, itemLayout } = this.props;

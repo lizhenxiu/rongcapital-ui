@@ -1,7 +1,10 @@
 # Rongcapital UI
 
 [![Build Status](https://travis-ci.org/WellerQu/rongcapital-ui.svg?branch=master)](https://travis-ci.org/WellerQu/rongcapital-ui)
-
+[![bitHound Overall Score](https://www.bithound.io/github/WellerQu/rongcapital-ui/badges/score.svg)](https://www.bithound.io/github/WellerQu/rongcapital-ui)
+[![bitHound Dependencies](https://www.bithound.io/github/WellerQu/rongcapital-ui/badges/dependencies.svg)](https://www.bithound.io/github/WellerQu/rongcapital-ui/master/dependencies/npm)
+[![bitHound Dev Dependencies](https://www.bithound.io/github/WellerQu/rongcapital-ui/badges/devDependencies.svg)](https://www.bithound.io/github/WellerQu/rongcapital-ui/master/dependencies/npm)
+[![bitHound Code](https://www.bithound.io/github/WellerQu/rongcapital-ui/badges/code.svg)](https://www.bithound.io/github/WellerQu/rongcapital-ui)
 
 
 ```
@@ -55,7 +58,7 @@
 	- **NavigationView**
 		有stack结构的视图组件
 		
-	- **ScrollableView**
+	- **ScrollView**
 		有滚动效果的视图组件
 		
 	- **CollectionView**

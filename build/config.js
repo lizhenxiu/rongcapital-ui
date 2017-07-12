@@ -7,6 +7,7 @@ function loadStories() {
     require('../stories/listView.story.js');
     require('../stories/navigationView.story.js');
     require('../stories/scrollView.story.js');
+    require('../stories/dragdropView.story.js');
     // You can require as many stories as you need.
 }
 

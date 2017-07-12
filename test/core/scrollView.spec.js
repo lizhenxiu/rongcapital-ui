@@ -7,7 +7,7 @@ import { ScrollView } from '../../src';
 import * as viewStyles from '../../src/styles/view.sass';
 import * as componentStyles from '../../src/styles/scrollView.sass';
 
-describe.only('core component scrollView', () => {
+describe('core component scrollView', () => {
 
     it('initialize by required properties', () => {
         const wrapper = shallow(<ScrollView width={ 500 } height={ 300 } />);
