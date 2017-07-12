@@ -1,6 +1,6 @@
 import React from 'react';
 import clazz from 'classnames';
-import { autobind } from 'core-decorators';
+//import { DragDropContext } from 'react-dnd';
 
 import View from './View';
 

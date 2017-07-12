@@ -69,6 +69,8 @@
     "normalize.css": "^7.0.0",
     "postcss-loader": "^2.0.6",
     "precss": "^2.0.0",
+    "react-custom-scrollbars": "^4.1.2",
+    "react-dnd": "^2.4.0",
     "react-test-renderer": "^15.6.1",
     "sass-loader": "^6.0.6",
     "sinon": "^2.3.6",
@@ -79,8 +81,6 @@
   },
   "dependencies": {
     "react": "^15.6.1",
-    "react-addons-create-fragment": "^15.6.0",
-    "react-custom-scrollbars": "^4.1.2",
     "react-dom": "^15.6.1"
   }
 }
