@@ -27,7 +27,7 @@ class View extends Component {
 
     render() {
         const { width, height, className, children } = this.props;
-        let styles = mergeStyle({ width, height }, defaultStyles);
+        const styles = mergeStyle({ width, height }, defaultStyles);
 
         return (
             <div className={ clazz(className, componentStyles.view) } style={ styles }>{ children }</div>

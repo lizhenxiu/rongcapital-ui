@@ -1,3 +1,5 @@
+import './styles/app.sass';
+
 export { 
     View, 
     CollectionView,
@@ -5,5 +7,5 @@ export {
     GridView,
     ListView,
     NavigationView,
-    ScrollableView,
+    ScrollView,
 } from './core';

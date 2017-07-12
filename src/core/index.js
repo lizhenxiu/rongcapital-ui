@@ -4,7 +4,7 @@ import DragDropView from './DragDropView';
 import GridView from './GridView';
 import ListView from './ListView';
 import NavigationView from './NavigationView';
-import ScrollableView from './ScrollableView';
+import ScrollView from './ScrollView';
 
 export {
     View,
@@ -13,5 +13,5 @@ export {
     GridView,
     ListView,
     NavigationView,
-    ScrollableView,
+    ScrollView,
 };

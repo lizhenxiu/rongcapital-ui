@@ -36,6 +36,12 @@
 ## 启动开发服务
 `npm run dev` 开始开发
 
+## 重要依赖
+
+### 组件类
+
+- [react-custom-scrollbars](https://github.com/malte-wessel/react-custom-scrollbars)
+
 ## 工具
 
 - [Enzyme](http://airbnb.io/enzyme/docs/api/index.html)
@@ -193,6 +199,15 @@
 
 - **Editor**
 	编辑器视觉组件, 继承自View视图组件
+
+- **Switch**
+    开关视觉组件, 集成自View视图
+    * 仅 **开, 关**二种样式;
+
+- **Slider**
+    滑动型输入器, 视觉组件, 继承自View视图组件
+    * 可以设置 **步长**
+    * 可以设置 **范围**
 
 ## Business Components
 

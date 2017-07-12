@@ -9,3 +9,6 @@ dist/
 
 # eslint
 .eslintcache
+
+# proj
+.bak

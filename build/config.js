@@ -6,7 +6,7 @@ function loadStories() {
     require('../stories/gridView.story.js');
     require('../stories/listView.story.js');
     require('../stories/navigationView.story.js');
-    require('../stories/scrollableView.story.js');
+    require('../stories/scrollView.story.js');
     // You can require as many stories as you need.
 }
 
