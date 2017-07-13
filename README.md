@@ -47,6 +47,7 @@
 ## 其他依赖
 
 - [react-custom-scrollbars](https://github.com/malte-wessel/react-custom-scrollbars)
+- [core-decorators](https://github.com/jayphelps/core-decorators.js)
 
 ## Core components
 
@@ -69,9 +70,6 @@
 		
 	- **GridView**
 		CollectionView的一种具体实现, 网格布局视图组件
-		
-	- **DragDropView**
-		可通过拖拽重新设置从属组件位置的视图组件
 
 ## Base components
 
@@ -214,4 +212,4 @@
 	树形表视觉组件
 
 - **Drag & Drop**
-	可拖拽视觉组件, 继承自DragDropView视图组件
+	可拖拽视觉组件
