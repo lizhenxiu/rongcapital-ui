@@ -3,7 +3,7 @@ import clazz from 'classnames';
 import PropTypes from 'prop-types';
 
 import View from './View';
-import * as componentStyles from '../styles/collectionView.sass';
+import * as componentStyles from '../styles/core/collectionView.sass';
 
 const noop = arg => arg;
 

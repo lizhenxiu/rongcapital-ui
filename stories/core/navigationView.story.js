@@ -2,9 +2,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-import { NavigationView } from '../src/core';
+import { NavigationView } from '../../src/core';
 
-import compose from '../src/utils/compose';
+import compose from '../../src/utils/compose';
 
 const ItemView = ({ children, next, prev }) => (
     <div>

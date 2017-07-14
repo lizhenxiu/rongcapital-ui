@@ -44,10 +44,11 @@
 - [Enzyme](http://airbnb.io/enzyme/docs/api/index.html)
 - [stroybook](https://storybook.js.org/)
 
-## 其他依赖
+## 其他重要依赖
 
 - [react-custom-scrollbars](https://github.com/malte-wessel/react-custom-scrollbars)
 - [core-decorators](https://github.com/jayphelps/core-decorators.js)
+- [react-dnd](https://github.com/react-dnd/react-dnd)
 
 ## Core components
 

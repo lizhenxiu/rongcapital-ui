@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { ListView } from '../src/core';
+import { ListView } from '../../src/core';
 
 const MODE = ListView.MODE;
 

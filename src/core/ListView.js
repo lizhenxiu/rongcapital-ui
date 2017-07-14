@@ -6,7 +6,7 @@ import memoize from 'lodash/memoize';
 
 import CollectionView from './CollectionView';
 
-import * as componentStyles from '../styles/listView.sass';
+import * as componentStyles from '../styles/core/listView.sass';
 
 const MODE = {
     VERTICAL: 0,

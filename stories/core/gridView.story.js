@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { GridView } from '../src/core';
+import { GridView } from '../../src/core';
 
 storiesOf('core.GridView', module)
     .add('initialize by default', () => (

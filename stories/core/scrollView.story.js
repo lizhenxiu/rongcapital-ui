@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { ScrollView } from '../src/core';
+import { ScrollView } from '../../src/core';
 
 const temp = {
     height: 100,

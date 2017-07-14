@@ -5,7 +5,7 @@ import { autobind } from 'core-decorators';
 
 import View from './View';
 
-import * as componentStyles from '../styles/navigationView.sass';
+import * as componentStyles from '../styles/core/navigationView.sass';
 
 class NavigationView extends View {
 

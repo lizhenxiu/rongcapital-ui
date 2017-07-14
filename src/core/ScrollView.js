@@ -5,7 +5,7 @@ import { Scrollbars } from 'react-custom-scrollbars';
 
 import View from './View';
 
-import * as componentStyles from '../styles/scrollView.sass';
+import * as componentStyles from '../styles/core/scrollView.sass';
 
 const defaultProps = {
     autoHide: true,

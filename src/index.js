@@ -1,4 +1,4 @@
-import './styles/app.sass';
+import './styles/appPreset.sass';
 
 export { 
     View, 

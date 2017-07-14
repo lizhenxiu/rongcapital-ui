@@ -8,7 +8,7 @@ import omit from 'lodash/omit';
 
 import CollectionView from './CollectionView';
 
-import * as componentStyles from '../styles/gridView.sass';
+import * as componentStyles from '../styles/core/gridView.sass';
 
 class GridView extends CollectionView {
 
