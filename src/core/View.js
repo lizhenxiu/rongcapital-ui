@@ -18,7 +18,8 @@ class View extends Component {
         width: PropTypes.number,
         height: PropTypes.number,
         className: PropTypes.string,
-        children: PropTypes.oneOfType([PropTypes.element, PropTypes.arrayOf(PropTypes.element)])
+        inline: PropTypes.bool,
+        children: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.arrayOf(PropTypes.element)])
     };
 
     constructor(props, context) {
@@ -26,11 +27,14 @@ class View extends Component {
     }
 
     render() {
-        const { width, height, className, children } = this.props;
+        const { width, height, inline, className, children } = this.props;
         const styles = mergeStyle({ width, height }, defaultStyles);
+        const classes = clazz(className, componentStyles.view, {
+            [componentStyles.inline]: inline
+        });
 
         return (
-            <div className={ clazz(className, componentStyles.view) } style={ styles }>{ children }</div>
+            <div className={ classes } style={ styles }>{ children }</div>
         );
     }
 }

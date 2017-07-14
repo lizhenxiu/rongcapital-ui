@@ -23,12 +23,10 @@ storiesOf('core.CollectionView', module)
 const itemLayout = (item, index) => ( 
     React.cloneElement(item, {
         ...item.props,
-        ...{
-            style: {
-                position: 'absolute',
-                right: 50 * index,
-                width: 50,
-                height: 50,
-            }
+        style: {
+            position: 'absolute',
+            right: 50 * index,
+            width: 50,
+            height: 50,
         }
     }));

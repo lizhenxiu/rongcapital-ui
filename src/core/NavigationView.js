@@ -19,11 +19,14 @@ class NavigationView extends View {
         const newProps = {
             ...elementTree.props,
             className: clazz(elementTree.props.className, componentStyles.navigationView),
-            children: React.Children.map(children, (item, idx) => idx === index ? React.cloneElement(item, {
-                ...item.props,
-                next,
-                prev,
-            }): void 0),
+            children: React.Children.map(children, (item, idx) => 
+                idx === index ? 
+                    React.cloneElement(item, {
+                        ...item.props,
+                        next,
+                        prev,
+                    })
+                    : void 0),
         };
 
         return React.cloneElement(elementTree, newProps);
@@ -39,10 +42,7 @@ const Controller = (View) =>
             afterNext: PropTypes.func,
             beforePrev: PropTypes.func,
             afterPrev: PropTypes.func,
-            children: PropTypes.oneOfType([
-                PropTypes.element,
-                PropTypes.arrayOf(PropTypes.element),
-            ]),
+            ...View.propTypes,
         };
 
         static defaultProps = {

@@ -13,17 +13,17 @@ import * as componentStyles from '../styles/gridView.sass';
 class GridView extends CollectionView {
 
     static propTypes = {
+        ...CollectionView.propTypes,
         rows: PropTypes.number.isRequired,
         columns: PropTypes.number.isRequired,
         cellLayout: PropTypes.func,
-        ...CollectionView.propTypes,
     };
 
     static defaultProps = {
+        ...CollectionView.defaultProps,
         rows: 0,
         columns: 0,
         cellLayout: arg => arg,
-        ...CollectionView.defaultProps,
     };
 
     constructor(props, context) {
@@ -58,6 +58,7 @@ class GridView extends CollectionView {
             if (!item)
                 continue;
 
+            // dot't clone child element
             cell.context = React.Children.toArray(omit(item, ['key']));
         }
 

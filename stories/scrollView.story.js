@@ -34,7 +34,7 @@ class Wrapper extends Component {
         const { items } = this.state;
         return (
             <ScrollView width={ 500 } height={ 300 }>
-                { items.map(n => <div style={ temp }>{ n }</div>) }
+                { items.map(n => <div key={ n } style={ temp }>{ n }</div>) }
             </ScrollView>
         );
     }
@@ -65,6 +65,6 @@ storiesOf('core.ScrollView', module)
             <div style={ temp }>items 5</div>
         </ScrollView>
     ))
-    .add('initialize by change content', () => (
+    .add('initialize by count of content will change', () => (
         <Wrapper />
     ));

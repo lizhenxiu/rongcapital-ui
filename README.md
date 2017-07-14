@@ -54,23 +54,178 @@
 **核心视图**组件, 无视觉效果, 但决定从属组件布局. 非常重要, 决定了后续其他 Base Components 的实现. 大约需要 **30** 人/日. 
 
 - **View**
-	基础视图组件
-	
-	- **NavigationView**
-		有stack结构的视图组件
-		
-	- **ScrollView**
-		有滚动效果的视图组件
-		
-	- **CollectionView**
-		单纯的无布局的容器组件, ListView, TableView, GridView均是具体实现
-		
-	- **ListView**
-		CollectionView的一种具体实现, 有水平排列或垂直排列效果的视图组件
-		
-	- **GridView**
-		CollectionView的一种具体实现, 网格布局视图组件
+    基础视图组件
 
+    | 属性名 | 类型 | 备注 |
+    | --- | --- | --- |
+    | height | number | 高度 |
+    | width | number | 宽度 |
+    | children | element | 从属元素 |
+    | inline | boolean | 默认false, 使用内联布局 |
+
+    ```javascript
+    const component = () => 
+        <View />;
+    ```
+
+    ```javascript
+    const component = () => 
+        <View width={ 100 } height={ 100 } />;
+    ```
+
+    ```javascript
+    const component = () => 
+        <View width={ 100 } height={ 100 }>
+            <div>Hello World</div>
+        </View>;
+    ```
+	
+- **CollectionView**
+    单纯的无布局的容器组件, ListView, GridView均是具体实现, 继承自View视图组件
+
+    | 属性名 | 类型 | 备注 |
+    | --- | --- | --- |
+    | itemLayout | func(item, index) | 在渲染前可以重新制定子元素渲染方案 |
+
+    ```javascript
+    const itemLayout = (item, index) => ( 
+        React.cloneElement(item, {
+            ...item.props,
+            style: {
+                position: 'absolute',
+                right: 50 * index,
+                width: 50,
+                height: 50,
+            }
+        }));
+
+    const component = () =>
+        <CollectionView width={ 500 } height={ 300 } itemLayout={ itemLayout }>
+            <div>Hello</div>
+            <div>Hello</div>
+            <div>Hello</div>
+        </CollectionView>;
+    ```
+    
+- **GridView**
+    CollectionView的一种具体实现, 网格布局视图组件, 继承自CollectionView视图组件
+
+    | 属性名 | 类型 | 备注 |
+    | --- | --- | --- |
+    | rows | number | 必填, 行数 |
+    | columns | number | 必填, 列数 |
+    | cellLayout | func(config) | 设置网格布局, 比如合并单元格 |
+
+    ```javascript
+    const cellLayout = () => {
+        cells[0].rowspan = 2;
+        cells[0].colspan = 2;
+        cells[1].isMounted = false; // 单元格已被合并, 所以不再挂载
+        cells[3].isMounted = false;
+        cells[4].isMounted = false;
+
+        return cells;
+    };
+
+    const component = () =>
+        <GridView width={ 300 } height={ 300 } rows={ 4 } columns={ 3 } cellLayout={ cellLayout }>
+            <div>item 0</div>
+            <div>item 1</div>
+            <div>item 2</div>
+            <div>item 3</div>
+            <div>item 4</div>
+            <div>item 5</div>
+            <div>item 6</div>
+            <div>item 7</div>
+            <div>item 8</div>
+            <div>item 9</div>
+            <div>item 10</div>
+            <div>item 11</div>
+            <div>item 12</div>
+        </GridView>
+    ```
+
+- **ListView**
+    CollectionView的一种具体实现, 有水平排列或垂直排列效果的视图组件, 继承自CollectionView视图组件
+
+    | 属性名 | 类型 | 备注 |
+    | --- | --- | --- |
+    | mode | number | 默认垂直排列 |
+
+    ```javascript
+    const component = () =>
+        <ListView>
+            <div>item 0</div>
+            <div>item 1</div>
+            <div>item 2</div>
+            <div>item 3</div>
+            <div>item 4</div>
+            <div>item 5</div>
+        </ListView>
+    ```
+
+    ```javascript
+    const MODE = ListView.MODE;
+    const component = () =>
+        <ListView mode={ MODE.HORIZONTAL } inline>
+            <div>item 0</div>
+            <div>item 1</div>
+            <div>item 2</div>
+            <div>item 3</div>
+            <div>item 4</div>
+            <div>item 5</div>
+        </ListView>
+    ```
+
+- **NavigationView**
+    有stack结构的视图组件, 继承自View视图组件
+
+    | 属性名 | 类型 | 备注 |
+    | --- | --- | --- |
+    | index | number | 当前显示从属元素索引, Zero-base |
+    | beforeNext | func | 显示下一个元素之前 |
+    | afterNext | func | 显示下一个元素之后 |
+    | beforePrev | func | 显示上一个元素之前 |
+    | afterPrev | func | 显示上一个元素之后 |
+
+    ```javascript
+    const ItemView = ({ children, next, prev }) => (
+        <div>
+            <p>{ children }</p>
+            <div>
+                <button onClick={ compose(prev, action('prev')) }>Prev</button>
+                <button onClick={ compose(next, action('next')) }>Next</button>
+            </div>
+        </div>
+    );
+
+    const component = () =>
+        <NavigationView width={ 200 } height={ 100 } index={ 2 }>
+            <ItemView>item 0</ItemView>
+            <ItemView>item 1</ItemView>
+            <ItemView>item 2</ItemView>
+        </NavigationView>
+    ```
+    
+- **ScrollView**
+    有滚动效果的视图组件, 继承自View视图组件
+
+    | 属性性 | 类型 | 备注 |
+    | --- | --- | --- |
+    | width | number | 必选, 宽度 |
+    | height | number | 必选, 高度 |
+
+    ```javascript
+    const component = () =>
+        <ScrollView width={ 500 } height={ 300 }>
+            <div style={ temp }>items 1</div>
+            <div style={ temp }>items 2</div>
+            <div style={ temp }>items 3</div>
+            <div style={ temp }>items 4</div>
+            <div style={ temp }>items 5</div>
+        </ScrollView>
+    ```
+		
 ## Base components
 
 **基础视觉**组件, 仅有外观, 无关布局的组件. 次等重要, 决定复杂 Business Components 的实现. 大约 **60** 人/日.

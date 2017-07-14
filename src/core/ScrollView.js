@@ -13,6 +13,7 @@ const defaultProps = {
 
 class ScrollView extends View {
     static propTypes = {
+        ...View.propTypes,
         width: PropTypes.number.isRequired,
         height: PropTypes.number.isRequired,
     }

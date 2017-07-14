@@ -15,4 +15,7 @@ storiesOf('core.View', module)
     ))
     .add('set both of all', () => (
         <View width={ 150 } height={ 150 } />
+    ))
+    .add('nested', () => (
+        <View><View width={ 100 } height={ 100 }>Hello</View></View>
     ));

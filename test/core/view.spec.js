@@ -30,6 +30,11 @@ describe('core component view', () => {
         expect(wrapper.html()).to.include('width:200px;height:300px');
     });
 
+    it('initialize with text', () => {
+        const wrapper = shallow(<View>Hello</View>);
+        expect(wrapper.text()).to.equal('Hello');
+    });
+
     it('initialize with children of element', () => {
         const wrapper = shallow(<View><div></div></View>);
         expect(wrapper.find('div').children('div')).to.have.lengthOf(1);

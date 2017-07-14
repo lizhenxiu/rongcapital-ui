@@ -10,10 +10,12 @@ const noop = arg => arg;
 class CollectionView extends View {
 
     static defaultProps = {
+        ...View.defaultProps,
         itemLayout: noop,
     };
 
     static propTypes = {
+        ...View.propTypes,
         itemLayout: PropTypes.func,
     };
 
@@ -24,16 +26,15 @@ class CollectionView extends View {
     render() {
         const elementTree = super.render();
         const props = elementTree.props;
+        const { children, itemLayout } = this.props;
 
         const newProps = {
             ...props,
             className: clazz(props.className, componentStyles.collectionView),
+            children: React.Children.map(children, itemLayout),
         };
 
-        const { children, itemLayout } = this.props;
-        const newChildren = React.Children.map(children, itemLayout);
-
-        return React.cloneElement(elementTree, newProps, newChildren);
+        return React.cloneElement(elementTree, newProps);
     }
 }
 
