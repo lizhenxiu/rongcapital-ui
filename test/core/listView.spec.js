@@ -4,7 +4,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import { ListView } from '../../src';
 
-import * as componentStyles from '../../src/styles/listView.sass';
+import * as componentStyles from '../../src/styles/core/listView.sass';
 
 describe('core component listView', () => {
 

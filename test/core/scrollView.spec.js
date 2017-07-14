@@ -4,8 +4,8 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import { ScrollView } from '../../src';
 
-import * as viewStyles from '../../src/styles/view.sass';
-import * as componentStyles from '../../src/styles/scrollView.sass';
+import * as viewStyles from '../../src/styles/core/view.sass';
+import * as componentStyles from '../../src/styles/core/scrollView.sass';
 
 describe('core component scrollView', () => {
 

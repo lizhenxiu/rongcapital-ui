@@ -4,7 +4,7 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import { GridView } from '../../src';
 
-import * as componentStyles from '../../src/styles/gridView.sass';
+import * as componentStyles from '../../src/styles/core/gridView.sass';
 
 describe('core component gridView', () => {
     

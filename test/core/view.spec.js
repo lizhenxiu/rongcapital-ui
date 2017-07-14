@@ -5,7 +5,7 @@ import { expect } from 'chai';
 import { /*mount, render,*/ shallow } from 'enzyme';
 
 import { View } from '../../src';
-import * as componentStyles from '../../src/styles/view.sass';
+import * as componentStyles from '../../src/styles/core/view.sass';
 
 describe('core component view', () => {
 

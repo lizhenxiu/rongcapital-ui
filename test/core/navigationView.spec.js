@@ -6,7 +6,7 @@ import { shallow } from 'enzyme';
 
 import { NavigationView } from '../../src';
 
-import * as componentStyles from '../../src/styles/navigationView.sass';
+import * as componentStyles from '../../src/styles/core/navigationView.sass';
 
 const ItemView = ({ children, next, prev }) => (
     <div className="navItem">

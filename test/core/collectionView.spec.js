@@ -4,8 +4,8 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import { CollectionView } from '../../src';
 
-import * as viewStyles from '../../src/styles/view.sass';
-import * as collectionViewStyles from '../../src/styles/collectionView.sass';
+import * as viewStyles from '../../src/styles/core/view.sass';
+import * as collectionViewStyles from '../../src/styles/core/collectionView.sass';
 
 describe('core component collectionView', () => {
 
