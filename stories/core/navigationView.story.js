@@ -16,6 +16,13 @@ const ItemView = ({ children, next, prev }) => (
     </div>
 );
 
+// eslint-disable no-console
+const beforePrev = () => console.info('beforePrev');
+const afterPrev = () => console.info('afterPrev');
+const beforeNext = () => console.info('beforeNext');
+const afterNext = () => console.info('afterNext');
+// eslint-enable no-console
+
 storiesOf('core.NavigationView', module)
     .add('initialize by default', () => (
         <NavigationView />
@@ -33,7 +40,11 @@ storiesOf('core.NavigationView', module)
         </NavigationView>
     ))
     .add('initialize by 5 children', () => (
-        <NavigationView width={ 200 } height={ 100 }>
+        <NavigationView width={ 200 } height={ 100 }
+            beforePrev={beforePrev}
+            afterPrev={afterPrev}
+            beforeNext={beforeNext}
+            afterNext={afterNext}>
             <ItemView>item 0</ItemView>
             <ItemView>item 1</ItemView>
             <ItemView>item 2</ItemView>

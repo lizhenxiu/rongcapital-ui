@@ -2,7 +2,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { expect } from 'chai';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
+import sinon from 'sinon';
 
 import { NavigationView } from '../../src';
 
@@ -57,8 +58,8 @@ describe('core component navigationView', () => {
         expect(wrapper.prop('index')).to.equal(0);
     });
 
-    it('initialize by 5 child and default index 2 and click next', () => {
-        const wrapper = shallow(
+    it('initialize by 5 children and default index 2 and click next', () => {
+        const wrapper = mount(
             <NavigationView width={ 200 } height={ 100 } index={ 2 }>
                 <ItemView>items 0</ItemView>
                 <ItemView>items 1</ItemView>
@@ -71,8 +72,7 @@ describe('core component navigationView', () => {
         expect(wrapper.prop('index')).to.equal(2);
         expect(wrapper.state('index')).to.equal(2);
 
-        const buttons = wrapper.find(ItemView).at(2).dive().find('button');
-
+        const buttons = wrapper.find('button');
         expect(buttons).to.have.lengthOf(2);
 
         const prevButton = buttons.at(0);
@@ -81,10 +81,41 @@ describe('core component navigationView', () => {
         expect(prevButton.text()).to.equal('Prev');
         expect(nextButton.text()).to.equal('Next');
 
-        //prevButton.simulate('click');
-        //expect(wrapper.state('index')).to.equal(1);
+        prevButton.simulate('click');
+        expect(wrapper.state('index')).to.equal(1);
 
-        //nextButton.simulate('click');
-        //expect(wrapper.state('index')).to.equal(2);
+        const newNextButton = wrapper.find('button').at(1);
+        newNextButton.simulate('click');
+        expect(wrapper.state('index')).to.equal(2);
+    });
+
+    it.only('initialize by 5 children and events', () => {
+        const beforePrev = sinon.spy();
+        const afterPrev = sinon.spy();
+        const beforeNext = sinon.spy();
+        const afterNext = sinon.spy();
+
+        const wrapper = mount(
+            <NavigationView width={ 200 } height={ 100 } 
+                beforePrev={ beforePrev }
+                afterPrev={ afterPrev }
+                beforeNext={ beforeNext }
+                afterNext={ afterNext }>
+                <ItemView>items 0</ItemView>
+                <ItemView>items 1</ItemView>
+                <ItemView>items 2</ItemView>
+                <ItemView>items 3</ItemView>
+                <ItemView>items 4</ItemView>
+            </NavigationView>
+        );
+
+        wrapper.props().beforePrev()
+        wrapper.props().afterPrev()
+        wrapper.props().beforeNext()
+        wrapper.props().afterNext()
+        expect(beforePrev.called).to.equal(true);
+        expect(afterPrev.called).to.equal(true);
+        expect(beforeNext.called).to.equal(true);
+        expect(afterNext.called).to.equal(true);
     });
 });

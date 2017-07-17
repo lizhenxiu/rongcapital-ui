@@ -37,12 +37,12 @@ const Controller = (View) =>
     class NavigationViewController extends Component {
 
         static propTypes = {
+            ...View.propTypes,
             index: PropTypes.number,
             beforeNext: PropTypes.func,
             afterNext: PropTypes.func,
             beforePrev: PropTypes.func,
             afterPrev: PropTypes.func,
-            ...View.propTypes,
         };
 
         static defaultProps = {
@@ -69,8 +69,9 @@ const Controller = (View) =>
             const { beforeNext, afterNext } = this.props;
 
             beforeNext && beforeNext();
-            this.setState({ index });
-            afterNext && afterNext();
+            this.setState({ index }, () => {
+                afterNext && afterNext();
+            });
         }
 
         @autobind
@@ -82,8 +83,9 @@ const Controller = (View) =>
             const { beforePrev, afterPrev } = this.props;
 
             beforePrev && beforePrev();
-            this.setState({ index });
-            afterPrev && afterPrev();
+            this.setState({ index }, () => {
+                afterPrev && afterPrev();
+            });
         }
 
         componentWillReceiveProps(nextProps) {
