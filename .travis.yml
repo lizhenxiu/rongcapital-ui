@@ -4,6 +4,7 @@ node_js:
 install: yarn
 script: 
     - yarn jslint
+    - yarn csslint
     - yarn test
 branches:
     only:
