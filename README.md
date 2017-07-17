@@ -369,3 +369,9 @@
 
 - **Drag & Drop**
 	可拖拽视觉组件
+
+## Colors Contants
+
+| Color | Sample |
+| --- | --- |
+| #FF0000 | <div style="width: 10px; height: 10px; background: #FF0000;"></div> |
