@@ -3,7 +3,7 @@ node_js:
     - '7.10'
 install: yarn
 script: 
-    - yarn lint
+    - yarn jslint
     - yarn test
 branches:
     only:

@@ -6,7 +6,8 @@
   "license": "MIT",
   "repository": "git@github.com:WellerQu/rongcapital-ui.git",
   "scripts": {
-    "lint": "eslint ./src ./test ./index.js --fix --cache",
+    "jslint": "eslint ./src ./test ./index.js --fix --cache",
+    "csslint": "stylelint ./src/styles/**/*.sass --syntax scss --fix --cache",
     "test": "cross-env NODE_ENV=development mocha --compilers js:babel-register,js:./test/css-complier.js -t 10000 -s 1000 --inline-diffs --growl --colors --harmony --recursive ./test/setup.js ./test/**/*.spec.js",
     "test:watch": "cross-env NODE_ENV=development mocha --watch --compilers js:babel-register,js:./test/css-complier.js -t 10000 -s 1000 --inline-diffs --growl --colors --harmony --recursive ./test/setup.js ./test/**/*.spec.js",
     "release:dev": "cross-env NODE_ENV=development webpack --config ./build/webpack.config.development.js",
@@ -47,6 +48,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-latest": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-react-optimize": "^1.0.1",
     "babel-preset-stage-2": "^6.24.1",
     "babel-register": "^6.24.1",
     "babel-runtime": "^6.23.0",

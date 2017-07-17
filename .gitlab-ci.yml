@@ -3,4 +3,6 @@ image: nodejs:7.10
 unit_test:
     script:
         - npm i
+        - npm run jslint
+        - npm run csslint
         - npm test
