@@ -21,11 +21,22 @@ class Breadcrumbs extends ListView {
     }
 
     render() {
+        const newChildren = [];
+        const { children } = this.props;
+        const arrayOfChildren = React.Children.toArray(children);
+
+        arrayOfChildren.forEach((item, index) => {
+            newChildren.push(item)
+
+            if (index != arrayOfChildren.length - 1)
+                newChildren.push(<span>/</span>);
+        });
+
         const elementTree = super.render();
         const newProps = {
             ...elementTree.props,
             mode: MODE.HORIZONTAL,
-            children: this.props.children,
+            children: newChildren,
         };
 
         return React.cloneElement(elementTree, newProps);

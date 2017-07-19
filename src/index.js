@@ -8,3 +8,7 @@ export {
     NavigationView,
     ScrollView,
 } from './core';
+
+export {
+    Breadcrumbs,
+} from './base';
