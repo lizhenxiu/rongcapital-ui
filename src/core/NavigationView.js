@@ -7,32 +7,6 @@ import View from './View';
 
 import * as componentStyles from '../styles/core/navigationView.sass';
 
-class NavigationView extends View {
-
-    constructor(props, context) {
-        super(props, context);
-    }
-
-    render() {
-        const { children, next, prev, index } = this.props;
-        const elementTree = super.render();
-        const newProps = {
-            ...elementTree.props,
-            className: clazz(elementTree.props.className, componentStyles.navigationView),
-            children: React.Children.map(children, (item, idx) => 
-                idx === index ? 
-                    React.cloneElement(item, {
-                        ...item.props,
-                        next,
-                        prev,
-                    })
-                    : void 0),
-        };
-
-        return React.cloneElement(elementTree, newProps);
-    }
-}
-
 const Controller = (View) =>
     class NavigationViewController extends Component {
 
@@ -105,4 +79,31 @@ const Controller = (View) =>
         }
     };
 
-export default Controller(NavigationView);
+@Controller
+class NavigationView extends View {
+
+    constructor(props, context) {
+        super(props, context);
+    }
+
+    render() {
+        const { children, next, prev, index } = this.props;
+        const elementTree = super.render();
+        const newProps = {
+            ...elementTree.props,
+            className: clazz(elementTree.props.className, componentStyles.navigationView),
+            children: React.Children.map(children, (item, idx) => 
+                idx === index ? 
+                    React.cloneElement(item, {
+                        ...item.props,
+                        next,
+                        prev,
+                    })
+                    : void 0),
+        };
+
+        return React.cloneElement(elementTree, newProps);
+    }
+}
+
+export default (NavigationView);
