@@ -109,10 +109,10 @@ describe('core component navigationView', () => {
             </NavigationView>
         );
 
-        wrapper.props().beforePrev()
-        wrapper.props().afterPrev()
-        wrapper.props().beforeNext()
-        wrapper.props().afterNext()
+        wrapper.props().beforePrev();
+        wrapper.props().afterPrev();
+        wrapper.props().beforeNext();
+        wrapper.props().afterNext();
         expect(beforePrev.called).to.equal(true);
         expect(afterPrev.called).to.equal(true);
         expect(beforeNext.called).to.equal(true);

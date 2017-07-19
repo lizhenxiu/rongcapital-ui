@@ -11,4 +11,5 @@ export {
 
 export {
     Breadcrumbs,
+    ActionBar,
 } from './base';

@@ -9,6 +9,7 @@ function loadStories() {
     require('../stories/core/scrollView.story.js');
 
     require('../stories/base/breadcrumbs.story.js');
+    require('../stories/base/actionBar.story.js');
     // You can require as many stories as you need.
 }
 
