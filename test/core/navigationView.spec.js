@@ -89,7 +89,7 @@ describe('core component navigationView', () => {
         expect(wrapper.state('index')).to.equal(2);
     });
 
-    it.only('initialize by 5 children and events', () => {
+    it('initialize by 5 children and events', () => {
         const beforePrev = sinon.spy();
         const afterPrev = sinon.spy();
         const beforeNext = sinon.spy();
