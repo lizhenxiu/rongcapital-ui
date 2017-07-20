@@ -1,8 +1,5 @@
 // for storybook
-const webpack = require('webpack');
-const merge = require('webpack-merge');
 const WebpackShellPlugin = require('webpack-shell-plugin');
-const path = require('path');
 const os = require('os');
 
 // load the default config generator.

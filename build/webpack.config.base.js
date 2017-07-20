@@ -1,4 +1,5 @@
-process.traceDeprecation = true
+/* global process, __dirname */
+process.traceDeprecation = true;
 
 const path = require('path');
 const webpack = require('webpack');
@@ -95,9 +96,9 @@ module.exports = {
                             }
                         },
                         {
-                            loader: "sass-loader",
+                            loader: 'sass-loader',
                             options: {
-                                data: "$env: " + process.env.NODE_ENV + ";",
+                                data: '$env: ' + process.env.NODE_ENV + ';',
                             }
                         },
                     ],
