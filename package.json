@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": "git@github.com:WellerQu/rongcapital-ui.git",
   "scripts": {
-    "jslint": "eslint ./build ./src ./test ./index.js --fix --cache",
+    "jslint": "eslint ./build ./src ./test ./stories ./index.js --fix --cache",
     "csslint": "sass-lint -v",
     "test": "cross-env NODE_ENV=development mocha --compilers js:babel-register,js:./test/css-complier.js -t 10000 -s 1000 --inline-diffs --growl --colors --harmony --recursive ./test/setup.js ./test/**/*.spec.js",
     "test:watch": "cross-env NODE_ENV=development mocha --watch --compilers js:babel-register,js:./test/css-complier.js -t 10000 -s 1000 --inline-diffs --growl --colors --harmony --recursive ./test/setup.js ./test/**/*.spec.js",

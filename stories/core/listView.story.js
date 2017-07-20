@@ -69,4 +69,4 @@ const itemLayout = (item, index) => {
     }
 
     return item;
-}
+};

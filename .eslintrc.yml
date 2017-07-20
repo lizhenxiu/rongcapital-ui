@@ -27,3 +27,4 @@ rules:
     - error
     - always
   no-console: 1
+  no-alert: 2

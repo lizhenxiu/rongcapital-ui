@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
@@ -16,12 +17,18 @@ const ItemView = ({ children, next, prev }) => (
     </div>
 );
 
-// eslint-disable no-console
+ItemView.propTypes = {
+    children: PropTypes.any,
+    next: PropTypes.func,
+    prev: PropTypes.func,
+};
+
+/* eslint-disable no-console */
 const beforePrev = () => console.info('beforePrev');
 const afterPrev = () => console.info('afterPrev');
 const beforeNext = () => console.info('beforeNext');
 const afterNext = () => console.info('afterNext');
-// eslint-enable no-console
+/* eslint-enable no-console */
 
 storiesOf('core.NavigationView', module)
     .add('initialize by default', () => (
