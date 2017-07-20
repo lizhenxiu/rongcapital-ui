@@ -4,6 +4,8 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import { Breadcrumbs } from '../../src';
 
+import * as componentStyles from '../../src/styles/base/breadcrumbs.sass';
+
 describe('base component breadcrumbs', () => {
     
     it('initialize by some child', () => {
@@ -19,5 +21,6 @@ describe('base component breadcrumbs', () => {
         );
 
         expect(wrapper.children('span')).to.have.lengthOf(11);
+        expect(wrapper.hasClass(componentStyles.breadcrumbs)).to.equal(true);
     });
 });
