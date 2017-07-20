@@ -1,7 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import clazz from 'classnames';
 
+import View from '../core/View';
 import ListView from '../core/ListView';
+
+import * as componentStyles from '../styles/base/actionBar.sass';
 
 const MODE = ListView.MODE;
 
@@ -22,18 +26,22 @@ class ActionBar extends ListView {
     }
 
     render() {
-        return super.render();
+        const elementTree = super.render();
+        const { props } = elementTree;
+        const newProps = {
+            ...props,
+            className: clazz(props.className, componentStyles['action-bar']),
+        };
+
+        return React.cloneElement(elementTree, newProps);
     }
 }
 
-ActionBar.Item = class extends Component {
-    static displayName = 'ActionBarItem';
+ActionBar.Item = class extends View {
+    static displayName = 'ActionBarItem'; // just for anonymouse component class 
 
     render() {
-        const { children, left } = this.props;
-        return (
-            <div>{ children }</div>
-        );
+        return super.render();
     }
 };
 

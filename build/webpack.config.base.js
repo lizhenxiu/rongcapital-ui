@@ -37,6 +37,7 @@ const plugins = [
     new webpack.BannerPlugin({ banner: `Powered by FE @ Cube team Version ${pkg.version}`, raw: false, entryOnly: true }),
     // 分离对react等的依赖
     new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),
+    //new webpack.optimize.CommonsChunkPlugin({ name: 'manifest', chunks: [ 'vendor' ] }),
     // 分离CSS文件
     new ExtractTextPlugin({
         filename: '[name].sass.css',
