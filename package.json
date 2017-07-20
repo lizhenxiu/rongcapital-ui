@@ -54,7 +54,6 @@
     "babel-runtime": "^6.23.0",
     "chai": "^4.0.2",
     "clean-webpack-plugin": "^0.1.16",
-    "core-decorators": "^0.19.0",
     "cross-env": "^5.0.1",
     "css-loader": "^0.28.4",
     "css-modules-require-hook": "^4.0.6",
@@ -63,16 +62,11 @@
     "eslint-plugin-react": "^7.1.0",
     "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^0.11.2",
-    "ignore-styles": "^5.0.1",
     "jsdom": "^11.0.0",
-    "lodash": "^4.17.4",
     "mocha": "^3.4.2",
     "node-sass": "^4.5.3",
-    "normalize.css": "^7.0.0",
     "postcss-loader": "^2.0.6",
     "precss": "^2.0.0",
-    "react-custom-scrollbars": "^4.1.2",
-    "react-dnd": "^2.4.0",
     "react-test-renderer": "^15.6.1",
     "sass-lint": "^1.10.2",
     "sass-loader": "^6.0.6",
@@ -83,7 +77,12 @@
     "webpack-shell-plugin": "^0.5.0"
   },
   "dependencies": {
+    "core-decorators": "^0.19.0",
+    "lodash": "^4.17.4",
+    "normalize.css": "^7.0.0",
     "react": "^15.6.1",
+    "react-custom-scrollbars": "^4.1.2",
+    "react-dnd": "^2.4.0",
     "react-dom": "^15.6.1"
   }
 }
