@@ -65,7 +65,7 @@ class GridView extends CollectionView {
         const newChildren = gridLayout(cells, rows, columns);
         const newProps = {
             ...elementTree.props,
-            className: clazz(elementTree.props.className, componentStyles.gridView),
+            className: clazz(elementTree.props.className, componentStyles['grid-view']),
             children: newChildren,
         };
 

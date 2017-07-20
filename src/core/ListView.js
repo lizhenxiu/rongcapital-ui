@@ -36,7 +36,7 @@ class ListView extends CollectionView {
         const { children } = elementTree.props;
         const newProps = {
             ...elementTree.props,
-            className: clazz(elementTree.props.className, componentStyles.listView, { 
+            className: clazz(elementTree.props.className, componentStyles['list-view'], { 
                 [componentStyles.horizontal]: mode === MODE.HORIZONTAL 
             }),
             children: listLayout(React.Children.toArray(children)),
