@@ -12,7 +12,7 @@ describe('core component scrollView', () => {
     it('initialize by required properties', () => {
         const wrapper = shallow(<ScrollView width={ 500 } height={ 300 } />);
         expect(wrapper.type()).to.equal('div');
-        expect(wrapper.hasClass(componentStyles.scrollView) && wrapper.hasClass(viewStyles.view)).to.equal(true);
+        expect(wrapper.hasClass(componentStyles['scroll-view']) && wrapper.hasClass(viewStyles.view)).to.equal(true);
     });
 
     it('initialize by 1 child', () => {

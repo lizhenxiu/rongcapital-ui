@@ -10,7 +10,7 @@ describe('core component listView', () => {
 
     it('initialize by default', () => {
         const wrapper = shallow(<ListView />);
-        expect(wrapper.hasClass(componentStyles.listView)).to.equal(true);
+        expect(wrapper.hasClass(componentStyles['list-view'])).to.equal(true);
         expect(wrapper.find('ul')).to.have.lengthOf(1);
     });
 

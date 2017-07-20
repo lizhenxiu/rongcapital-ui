@@ -12,7 +12,7 @@ describe('core component collectionView', () => {
     it('initialize by required properties', () => {
         const wrapper = shallow(<CollectionView />);
         expect(wrapper.type()).to.equal('div');
-        expect(wrapper.hasClass(viewStyles.view) && wrapper.hasClass(collectionViewStyles.collectionView)).to.equal(true);
+        expect(wrapper.hasClass(viewStyles.view) && wrapper.hasClass(collectionViewStyles['collection-view'])).to.equal(true);
     });
 
     it('initialize by one child', () => {

@@ -10,14 +10,14 @@ describe('core component gridView', () => {
     
     it('initialize by default', () => {
         const wrapper = shallow(<GridView />);
-        expect(wrapper.hasClass(componentStyles.gridView)).to.equal(true);
+        expect(wrapper.hasClass(componentStyles['grid-view'])).to.equal(true);
         expect(wrapper.find('div').children('table')).to.have.lengthOf(1);
     });
 
     it('initialize by className', () => {
         const wrapper = shallow(<GridView className="abc" />);
         expect(wrapper.hasClass('abc')).to.equal(true);
-        expect(wrapper.hasClass(componentStyles.gridView)).to.equal(true);
+        expect(wrapper.hasClass(componentStyles['grid-view'])).to.equal(true);
     });
 
     it('initialize by 3 rows, 2 columns and 4 children', () => {
