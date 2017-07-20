@@ -91,7 +91,7 @@ class NavigationView extends View {
         const elementTree = super.render();
         const newProps = {
             ...elementTree.props,
-            className: clazz(elementTree.props.className, componentStyles.navigationView),
+            className: clazz(elementTree.props.className, componentStyles['navigation-view']),
             children: React.Children.map(children, (item, idx) => 
                 idx === index ? 
                     React.cloneElement(item, {

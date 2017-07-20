@@ -80,7 +80,7 @@
             <div>Hello World</div>
         </View>;
     ```
-	
+    
 - **CollectionView**
     单纯的无布局的容器组件, ListView, GridView均是具体实现, 继承自View视图组件
 
@@ -226,130 +226,130 @@
             <div style={ temp }>items 5</div>
         </ScrollView>
     ```
-		
+        
 ## Base components
 
 **基础视觉**组件, 仅有外观, 无关布局的组件. 次等重要, 决定复杂 Business Components 的实现. 大约 **60** 人/日.
 
 - **Breadcrumbs**
-	面包屑视觉组件, 继承自ListView视图组件的高阶组件
+    面包屑视觉组件, 继承自ListView视图组件的高阶组件
 
 - **ActionBar**
-	应用标题视觉组件, 继承自ListView视图组件的高阶组件
-	
-	- **ActionBar.Item**
-		ActionBar中的视图组件
-		
-	- **ActionBar.Separator**
-		ActionBar中的分隔符视觉组件
+    应用标题视觉组件, 继承自ListView视图组件的高阶组件
+    
+    - **ActionBar.Item**
+        ActionBar中的视图组件
+        
+    - **ActionBar.Separator**
+        ActionBar中的分隔符视觉组件
 
-- **SnakeBar**	
-	窗口底部显示消息的视觉组件
-	* 有 **左下角, 底部居中, 右下角** 三种定位选择;
+- **SnakeBar**  
+    窗口底部显示消息的视觉组件
+    * 有 **左下角, 底部居中, 右下角** 三种定位选择;
 
 - **SnakeBarGroup**
-	管理多个SnakeBar的视图组件, 继承自ListView视图组件.
-	* 有 **左下角, 底部居中, 右下角** 三种定位选择;
+    管理多个SnakeBar的视图组件, 继承自ListView视图组件.
+    * 有 **左下角, 底部居中, 右下角** 三种定位选择;
 
 - **Menu**
-	菜单视图组件. 继承自ListView视图组件
-	
-	- **Menu.Item**
-		菜单项视觉组件, 集成自View视图组件
+    菜单视图组件. 继承自ListView视图组件
+    
+    - **Menu.Item**
+        菜单项视觉组件, 集成自View视图组件
 
 - **Loading**
     视觉组件, 显示加载中, 继承自View视图组件
 
 - **LOGO**
-	LOGO视觉组件, 继承自View视图组件
+    LOGO视觉组件, 继承自View视图组件
 
 - **ICONS**
-	各种ICON视觉组件, 继承自View视图组件. 计划采用阿里的开源[矢量图标集](http://www.iconfont.cn/) 
-	* 有 **正常(默认), 禁用** 二种状态;
-	* 有 **大, 中(默认), 小** 三种尺寸;
-	* 有 **文案前置, 文案后置(默认), 不显示文案** 三种选择;
+    各种ICON视觉组件, 继承自View视图组件. 计划采用阿里的开源[矢量图标集](http://www.iconfont.cn/) 
+    * 有 **正常(默认), 禁用** 二种状态;
+    * 有 **大, 中(默认), 小** 三种尺寸;
+    * 有 **文案前置, 文案后置(默认), 不显示文案** 三种选择;
 
 - **Image**
-	图片视觉组件, 继承自View视图组件
-	* 有 **顶部文案, 底部文案(默认), 不显示文案** 三种选择;
-	* 有 **文案居左(默认), 文案居中, 文案居右** 三种选择;
-	* 有 **水平填满, 垂直填满, 全部填满, 原图大小(默认)** 四种选择;
+    图片视觉组件, 继承自View视图组件
+    * 有 **顶部文案, 底部文案(默认), 不显示文案** 三种选择;
+    * 有 **文案居左(默认), 文案居中, 文案居右** 三种选择;
+    * 有 **水平填满, 垂直填满, 全部填满, 原图大小(默认)** 四种选择;
 
 - **Label**
-	标签视觉组件, 继承自View视图组件
+    标签视觉组件, 继承自View视图组件
 
 - **Text**
-	文案视觉组件, 继承自View视图组件
-	* 有 **1 - 6** 个级别字体大小
+    文案视觉组件, 继承自View视图组件
+    * 有 **1 - 6** 个级别字体大小
 
 - **Panel**
-	面板容器视觉组件, 继承自View视图组件
-	
-	- **Panel.Header**
-	- **Panel.Footer**
-	- **Panel.Body**
+    面板容器视觉组件, 继承自View视图组件
+    
+    - **Panel.Header**
+    - **Panel.Footer**
+    - **Panel.Body**
 
 - **Card**
-	卡片容器视觉组件, 继承自Panel视觉组件
+    卡片容器视觉组件, 继承自Panel视觉组件
 
 - **SidePanel**
-	定位在窗体四周的边栏面板视觉组件, 继承自Panel视觉组件
-	
+    定位在窗体四周的边栏面板视觉组件, 继承自Panel视觉组件
+    
 - **Button** ( Large | Normal | Small | Primary | Second | Default | Disabled )
-	按钮视觉组件, 继承自View视图组件
-	* 有 **正常, 点击, 悬停, 禁用** 四种样式;
-	* 有 **矩形, 圆形** 二种样式;
-	* 有 **主要, 次要, 默认** 三种样式;
-	
+    按钮视觉组件, 继承自View视图组件
+    * 有 **正常, 点击, 悬停, 禁用** 四种样式;
+    * 有 **矩形, 圆形** 二种样式;
+    * 有 **主要, 次要, 默认** 三种样式;
+    
 - **ButtonGroup** 
-	按钮组视图组件, 用于管理按钮视觉组件. 继承自ListView视图组件.
-	
-	- **ButtonGroup.Separator**
-		按钮组分隔符视觉组件, 继承自View视图组件.
+    按钮组视图组件, 用于管理按钮视觉组件. 继承自ListView视图组件.
+    
+    - **ButtonGroup.Separator**
+        按钮组分隔符视觉组件, 继承自View视图组件.
 
 - **Form**
-	表单视图组件, 没有继承自任何组件的高阶组件, 依据表现形式组装从属组件.
-	* 有 **水平, 垂直, 网格** 三种表现形式;
-	* 发起从属组件内容验证
-	
+    表单视图组件, 没有继承自任何组件的高阶组件, 依据表现形式组装从属组件.
+    * 有 **水平, 垂直, 网格** 三种表现形式;
+    * 发起从属组件内容验证
+    
 - **InputText**
-	文本框视觉组件, 继承自View视图组件
-	* 被动触发内容验证;
-	* 有Placeholder;
-	
+    文本框视觉组件, 继承自View视图组件
+    * 被动触发内容验证;
+    * 有Placeholder;
+    
 - **Checkbox**
-	复选框视觉组件
-	* 被动触发内容验证;
-	
+    复选框视觉组件
+    * 被动触发内容验证;
+    
 - **CheckboxGroup**
-	管理复选框的复选框组视图组件, 继承自ListView视图组件
-	* 有 **多选, 单选** 二种模式;
-	* 被动触发内容验证;
-	
+    管理复选框的复选框组视图组件, 继承自ListView视图组件
+    * 有 **多选, 单选** 二种模式;
+    * 被动触发内容验证;
+    
 - **DropdownList**
-	下拉菜单组件, 继承自ListView视图组件
-	* 被动触发内容验证
+    下拉菜单组件, 继承自ListView视图组件
+    * 被动触发内容验证
 
 - **Dialog**
-	弹出窗口视觉组件, 继承自Panel视觉组件
-	* 有 **模态, 非模态** 二种模式;
+    弹出窗口视觉组件, 继承自Panel视觉组件
+    * 有 **模态, 非模态** 二种模式;
 
-	- **Dialog.Header**
-	- **Dialog.Footer**
-	- **Dialog.Body**
+    - **Dialog.Header**
+    - **Dialog.Footer**
+    - **Dialog.Body**
 
 - **CoverLayer**
-	遮罩层视觉组件, 继承自View视图组件
+    遮罩层视觉组件, 继承自View视图组件
 
 - **Chart**
-	图表视觉组件, 继承自View视图组件, 计划继续使用ECharts
+    图表视觉组件, 继承自View视图组件, 计划继续使用ECharts
 
 - **Calendar**( Date | Time | DateTime )
-	日历视觉组件, 继承自View视图组件
-	* 有 **日期模式, 时间模式, 完全模式** 三种模式;
+    日历视觉组件, 继承自View视图组件
+    * 有 **日期模式, 时间模式, 完全模式** 三种模式;
 
 - **Editor**
-	编辑器视觉组件, 继承自View视图组件
+    编辑器视觉组件, 继承自View视图组件
 
 - **Switch**
     开关视觉组件, 集成自View视图
@@ -365,13 +365,48 @@
 大约 **5** 人日
 
 - **TreeTable**
-	树形表视觉组件
+    树形表视觉组件
 
 - **Drag & Drop**
-	可拖拽视觉组件
+    可拖拽视觉组件
 
 ## Colors Contants
 
-| Color | Sample |
-| --- | --- |
-| #FF0000 | <div style="width: 10px; height: 10px; background: #FF0000;"></div> |
+| name | Color | Sample |
+| --- | --- | --- |
+| $color-0  | #263238 | <div style="width: 10px; height: 10px; background:#263238;"></div> |
+| $color-1  | #37474f | <div style="width: 10px; height: 10px; background:#37474f;"></div> |
+| $color-2  | #455a64 | <div style="width: 10px; height: 10px; background:#455a64;"></div> |
+| $color-3  | #fff | <div style="width: 10px; height: 10px; background:#fff;"></div> |
+| $color-4  | #04def7 | <div style="width: 10px; height: 10px; background:#04def7;"></div> |
+| $color-5  | #bdbdbd | <div style="width: 10px; height: 10px; background:#bdbdbd;"></div> |
+| $color-6  | #03a9f4 | <div style="width: 10px; height: 10px; background:#03a9f4;"></div> |
+| $color-7  | #41535c | <div style="width: 10px; height: 10px; background:#41535c;"></div> |
+| $color-8  | #00e5ff | <div style="width: 10px; height: 10px; background:#00e5ff;"></div> |
+| $color-9  | #546e7a | <div style="width: 10px; height: 10px; background:#546e7a;"></div> |
+| $color-10  | #dde1e3 | <div style="width: 10px; height: 10px; background:#dde1e3;"></div> |
+| $color-11  | #37474f | <div style="width: 10px; height: 10px; background:#37474f;"></div> |
+| $color-12  | #465862 | <div style="width: 10px; height: 10px; background:#465862;"></div> |
+| $color-13  | #aab4b6 | <div style="width: 10px; height: 10px; background:#aab4b6;"></div> |
+| $color-14  | #e51c23 | <div style="width: 10px; height: 10px; background:#e51c23;"></div> |
+| $color-15  | #259b24 | <div style="width: 10px; height: 10px; background:#259b24;"></div> |
+| $color-16  | rgba(0, 0, 0, .54) | <div style="width: 10px; height: 10px; background:rgba(0, 0, 0, .54);"></div> |
+| $color-17  | rgba(0, 0, 0, .56) | <div style="width: 10px; height: 10px; background:rgba(0, 0, 0, .56);"></div> |
+| $color-18  | rgba(0, 0, 0, .2) | <div style="width: 10px; height: 10px; background:rgba(0, 0, 0, .2);"></div> |
+| $color-19  | rgba(0, 0, 0, .1) | <div style="width: 10px; height: 10px; background:rgba(0, 0, 0, .1;"></div> |
+| $color-20  | rgba(0, 0, 0, .87) | <div style="width: 10px; height: 10px; background:rgba(0, 0, 0, .87);"></div> |
+| $color-21  | rgba(0, 0, 0, .83) | <div style="width: 10px; height: 10px; background:rgba(0, 0, 0, .83);"></div> |
+| $color-22  | rgba(0, 229, 255, .25)    | <div style="width: 10px; height: 10px; background:rgba(0, 229, 255, .25);"></div> |
+| $color-23  | rgba(0, 229, 255, .15) | <div style="width: 10px; height: 10px; background:rgba(0, 229, 255, .15);"></div> |
+| $color-24  | rgba(7, 151, 239, 239) | <div style="width: 10px; height: 10px; background:rgba(7, 151, 239, 239);"></div> |
+| $color-25  | rgba(84, 110, 122, .26) | <div style="width: 10px; height: 10px; background:rgba(84, 110, 122, .26);"></div> |
+| $color-26  | rgba(221, 225, 227, 0) | <div style="width: 10px; height: 10px; background:rgba(221, 225, 227, 0;"></div> |
+| $color-27  | rgba(221, 225, 227, .5) | <div style="width: 10px; height: 10px; background:rgba(221, 225, 227, .5);"></div> |
+| $color-28  | rgba(255, 244, 244, .54) | <div style="width: 10px; height: 10px; background:rgba(255, 244, 244, .54);"></div> |
+| $color-29  | rgba(255, 255, 255, .87)  | <div style="width: 10px; height: 10px; background:rgba(255, 255, 255, .87);"></div> |
+| $color-30  | rgba(255, 255, 255, .15) | <div style="width: 10px; height: 10px; background:rgba(255, 255, 255, .15);"></div> |
+| $color-31  | rgba(255, 255, 255, .54) | <div style="width: 10px; height: 10px; background:rgba(255, 255, 255, .54);"></div> |
+| $color-32  | rgba(255, 255, 255, .3) | <div style="width: 10px; height: 10px; background:rgba(255, 255, 255, .3);"></div> |
+| $color-33  | rgba(255, 255, 255, .12) | <div style="width: 10px; height: 10px; background:rgba(255, 255, 255, .12;"></div> |
+| $color-34  | rgba(255, 255, 255, .26) | <div style="width: 10px; height: 10px; background:rgba(255, 255, 255, .26);"></div> |
+| $color-35  | rgba(255, 255, 255, 255) | <div style="width: 10px; height: 10px; background:rgba(255, 255, 255, 255);"></div> |

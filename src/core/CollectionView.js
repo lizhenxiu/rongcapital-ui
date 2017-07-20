@@ -30,7 +30,7 @@ class CollectionView extends View {
 
         const newProps = {
             ...props,
-            className: clazz(props.className, componentStyles.collectionView),
+            className: clazz(props.className, componentStyles['collection-view']),
             children: React.Children.map(children, itemLayout),
         };
 
