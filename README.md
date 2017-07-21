@@ -370,7 +370,7 @@
 - **Drag & Drop**
     可拖拽视觉组件
 
-## Colors Contants
+## Colors Constants
 
 | name | Color | Sample |
 | --- | --- | --- |

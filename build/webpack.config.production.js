@@ -5,9 +5,10 @@ const baseConfig = require('./webpack.config.base');
 
 module.exports = merge(baseConfig, {
     output: Object.assign({}, baseConfig.output, {
-        filename: '[name].prod.js',
+        filename: '[name].js',
     }),
     plugins: [
+        new webpack.optimize.ModuleConcatenationPlugin(),
         new webpack.optimize.UglifyJsPlugin({
             sourceMap: false,  // default
             minimize: true,
