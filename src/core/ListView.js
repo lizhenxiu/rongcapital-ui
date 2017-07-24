@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clazz from 'classnames';
 
-import memoize from 'lodash/memoize';
-
 import CollectionView from './CollectionView';
 
 import * as componentStyles from '../styles/core/listView.sass';
@@ -17,7 +15,7 @@ class ListView extends CollectionView {
 
     static propTypes = {
         ...CollectionView.propTypes,
-        mode: PropTypes.oneOf([ ...Object.values(MODE) ]),
+        mode: PropTypes.oneOf(Object.values(MODE)),
     };
 
     static defaultProps = {
@@ -33,23 +31,20 @@ class ListView extends CollectionView {
     render() {
         const { mode } = this.props;
         const elementTree = super.render();
-        const { children } = elementTree.props;
+        const { children, ...others } = elementTree.props;
         const newProps = {
-            ...elementTree.props,
+            ...others,
             className: clazz(elementTree.props.className, componentStyles['list-view'], { 
-                [componentStyles.horizontal]: mode === MODE.HORIZONTAL 
+                [componentStyles['list-view-horizontal']]: mode === MODE.HORIZONTAL 
             }),
-            children: listLayout(React.Children.toArray(children)),
         };
 
-        return React.cloneElement(elementTree, newProps);
+        //return React.cloneElement(elementTree, newProps);
+        return <ul { ...newProps }>{ React.Children.map(children, listLayout)}</ul>;
     }
 }
 
-const listLayout = memoize((items = []) => 
-    <ul>
-        { items.map((component, index) => <li key={ index }>{ component  }</li>) }
-    </ul>
-);
+const listLayout = (element, index) => 
+    <li key={ index }>{ element }</li>;
 
 export default ListView;

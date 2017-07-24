@@ -31,10 +31,10 @@ class Breadcrumbs extends ListView {
         const arrayOfChildren = React.Children.toArray(children);
 
         arrayOfChildren.forEach((item, index) => {
-            newChildren.push(item);
+            newChildren.push(<li>{ item }</li>);
 
             if (index != arrayOfChildren.length - 1)
-                newChildren.push(<span>/</span>);
+                newChildren.push(<li>/</li>);
         });
 
         const elementTree = super.render();

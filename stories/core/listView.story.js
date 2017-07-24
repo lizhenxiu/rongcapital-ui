@@ -33,6 +33,7 @@ storiesOf('core.ListView', module)
                 <div>item 4</div>
                 <div>item 5</div>
             </ListView>
+            <span>Hello</span>
             <hr />
             <ListView mode={ MODE.HORIZONTAL } inline>
                 <div>item 0</div>
@@ -42,6 +43,7 @@ storiesOf('core.ListView', module)
                 <div>item 4</div>
                 <div>item 5</div>
             </ListView>
+            <span>Hello</span>
         </div>
     ))
     .add('initialize by 6 items and itemLayout', () => (

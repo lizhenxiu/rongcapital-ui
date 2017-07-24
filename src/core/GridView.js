@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clazz from 'classnames';
 
-import range from 'lodash/range';
-import memoize from 'lodash/memoize';
-import omit from 'lodash/omit';
+import range from 'ramda/src/range';
+import memoize from 'ramda/src/memoize';
+import omit from 'ramda/src/omit';
 
 import CollectionView from './CollectionView';
 
@@ -59,7 +59,7 @@ class GridView extends CollectionView {
                 continue;
 
             // dot't clone child element
-            cell.context = React.Children.toArray(omit(item, ['key']));
+            cell.context = React.Children.toArray(omit(['key'], item));
         }
 
         const newChildren = gridLayout(cells, rows, columns);
@@ -77,10 +77,10 @@ const gridLayout = memoize((cells, rows, columns) =>
     <table>
         <tbody>
             {
-                range(rows).map(rowIndex => 
+                range(0, rows).map(rowIndex => 
                     <tr key={ `.0.0.${rowIndex}` }>
                         {
-                            range(columns).map(columnIndex => 
+                            range(0, columns).map(columnIndex => 
                                 cells[rowIndex * columns + columnIndex].isMounted &&
                                 <td key={ `.0.0.${rowIndex}.${columnIndex}` }
                                     colSpan={ cells[rowIndex * columns + columnIndex].colspan }

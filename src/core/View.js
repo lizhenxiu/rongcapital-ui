@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import clazz from 'classnames';
 import PropTypes from 'prop-types';
-import defaults from 'lodash/defaults';
-import memoize from 'lodash/memoize';
+import defaults from 'ramda/src/merge';
+import memoize from 'ramda/src/memoize';
 
 import * as componentStyles from '../styles/core/view.sass';
 
@@ -28,13 +28,13 @@ class View extends Component {
 
     render() {
         const { width, height, inline, className, children } = this.props;
-        const styles = mergeStyle({ width, height }, defaultStyles);
-        const classes = clazz(className, componentStyles.view, {
+        const styles = mergeStyle(defaultStyles, { width, height });
+        const classNames = clazz(className, componentStyles.view, {
             [componentStyles.inline]: inline
         });
 
         return (
-            <div className={ classes } style={ styles }>{ children }</div>
+            <div className={ classNames } style={ styles }>{ children }</div>
         );
     }
 }

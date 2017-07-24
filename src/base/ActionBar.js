@@ -1,48 +1,28 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import clazz from 'classnames';
-
-import View from '../core/View';
-import ListView from '../core/ListView';
+import PropTypes from 'prop-types';
 
 import * as componentStyles from '../styles/base/actionBar.sass';
 
-const MODE = ListView.MODE;
+const ActionBar = ({ children }) =>
+    <ul className={ componentStyles['action-bar'] }>{ children }</ul>;
 
-class ActionBar extends ListView {
+ActionBar.Item = ({ children, right }) => 
+    <li className={ clazz({
+        [componentStyles.right]: right,
+    }) }>{ children }</li>;
 
-    static propTypes = {
-        ...ListView.propTypes,
-        mode: PropTypes.oneOf([ MODE.HORIZONTAL ]),
-    };
+ActionBar.propTypes = {
+    children: PropTypes.oneOfType([ PropTypes.element, PropTypes.arrayOf(PropTypes.element) ]),
+};
 
-    static defaultProps = {
-        ...ListView.defaultProps,
-        mode: MODE.HORIZONTAL,
-    };
-
-    constructor(props, context) {
-        super(props, context);
-    }
-
-    render() {
-        const elementTree = super.render();
-        const { props } = elementTree;
-        const newProps = {
-            ...props,
-            className: clazz(props.className, componentStyles['action-bar']),
-        };
-
-        return React.cloneElement(elementTree, newProps);
-    }
-}
-
-ActionBar.Item = class extends View {
-    static displayName = 'ActionBarItem'; // just for anonymouse component class 
-
-    render() {
-        return super.render();
-    }
+ActionBar.Item.displayName = 'ActionBarItem';
+ActionBar.Item.propTypes = {
+    right: PropTypes.bool,
+    children: PropTypes.any,
+};
+ActionBar.Item.defaultProps = {
+    right: false,
 };
 
 export default ActionBar;

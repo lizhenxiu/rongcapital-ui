@@ -18,6 +18,8 @@ const SRC_PATH = path.join(__dirname, '../src');
 
 // 当前是否是开发环境
 const __DEV__ = process.env.NODE_ENV === 'development';
+// 依赖项
+const vendors = pkg.dependencies;
 
 const plugins = [
     // 环境定义
@@ -51,7 +53,7 @@ module.exports = {
     plugins,
     entry: {
         rongcapital: SRC_PATH,
-        vendor: ['react', 'react-dom'],
+        vendor: Object.keys(vendors).filter(item => item.indexOf('.css') === -1),
     },
     output: {
         path: DIST_PATH,

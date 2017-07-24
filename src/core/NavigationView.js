@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import clazz from 'classnames';
-import { autobind } from 'core-decorators';
+import autobind from 'core-decorators/lib/autobind';
 
 import View from './View';
 

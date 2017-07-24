@@ -7,6 +7,13 @@ import { Breadcrumbs } from '../../src';
 import * as componentStyles from '../../src/styles/base/breadcrumbs.sass';
 
 describe('base component breadcrumbs', () => {
+    it('initialize by default', () => {
+        const wrapper = shallow(
+            <Breadcrumbs />
+        );
+
+        expect(wrapper.hasClass(componentStyles.breadcrumbs)).to.equal(true);
+    });
     
     it('initialize by some child', () => {
         const wrapper = shallow(
@@ -20,7 +27,6 @@ describe('base component breadcrumbs', () => {
             </Breadcrumbs>
         );
 
-        expect(wrapper.children('span')).to.have.lengthOf(11);
-        expect(wrapper.hasClass(componentStyles.breadcrumbs)).to.equal(true);
+        expect(wrapper.children('li')).to.have.lengthOf(11);
     });
 });
