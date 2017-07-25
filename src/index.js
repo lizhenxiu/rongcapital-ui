@@ -12,4 +12,8 @@ export {
 export {
     Breadcrumbs,
     ActionBar,
+    SnakeBar,
 } from './base';
+
+import AppTheme from './AppTheme';
+export { AppTheme };

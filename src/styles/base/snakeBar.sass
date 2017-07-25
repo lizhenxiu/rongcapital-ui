@@ -1,0 +1,28 @@
+@import '../constants/colors'
+
+.snake-bar
+  bottom: 10px
+  display: block
+  position: absolute
+
+  li + li
+    margin: 10px 0 0
+
+.snake-bar-left
+  left: 10px
+
+.snake-bar-right
+  right: 10px
+
+.snake-bar-center
+  left: 50%
+  transform: translateX(-50%)
+
+.snake-bar-item
+  display: block
+  min-width: 340px
+  padding: 20px
+
+.theme-light
+  background: $color-13
+  color: $color-3

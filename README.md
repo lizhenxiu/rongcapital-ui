@@ -240,15 +240,8 @@
     - **ActionBar.Item**
         ActionBar中的视图组件
         
-    - **ActionBar.Separator**
-        ActionBar中的分隔符视觉组件
-
 - **SnakeBar**  
     窗口底部显示消息的视觉组件
-    * 有 **左下角, 底部居中, 右下角** 三种定位选择;
-
-- **SnakeBarGroup**
-    管理多个SnakeBar的视图组件, 继承自ListView视图组件.
     * 有 **左下角, 底部居中, 右下角** 三种定位选择;
 
 - **Menu**

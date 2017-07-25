@@ -1,3 +1,4 @@
+/* 一种另类的尝试 */
 import React from 'react';
 import clazz from 'classnames';
 import PropTypes from 'prop-types';

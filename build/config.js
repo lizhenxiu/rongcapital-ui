@@ -10,6 +10,7 @@ function loadStories() {
 
     require('../stories/base/breadcrumbs.story.js');
     require('../stories/base/actionBar.story.js');
+    require('../stories/base/snakeBar.story.js');
     // You can require as many stories as you need.
 }
 
