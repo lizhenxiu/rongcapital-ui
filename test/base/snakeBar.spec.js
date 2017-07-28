@@ -7,7 +7,7 @@ import sinon from 'sinon';
 
 import * as componentStyles from '../../src/styles/base/snakeBar.sass';
 
-describe.only('base component snakeBar', () => {
+describe('base component snakeBar', () => {
     it('initialize by default', () => {
         const wrapper = render(<SnakeBar />);
         expect(wrapper.find(`.${ componentStyles['snake-bar'] }`)).to.have.lengthOf(1);
