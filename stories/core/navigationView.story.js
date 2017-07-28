@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 
 import { NavigationView } from '../../src/core';
 
-import compose from '../../src/utils/compose';
+import compose from 'ramda/src/compose';
 
 const ItemView = ({ children, next, prev }) => (
     <div>

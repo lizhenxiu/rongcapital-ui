@@ -25,51 +25,48 @@ const Controller = (View) =>
         static propTypes = {
             children: PropTypes.oneOfType([PropTypes.element, PropTypes.arrayOf(PropTypes.element)]),
             delay: PropTypes.number,
+            onRequestRemove: PropTypes.func,
         };
 
         constructor(props) {
             super(props);
-
-            const { children } = props;
-
             this.state = {
                 pollId: 0,
-                children: React.Children.toArray(children),
             };
         }
 
         @autobind
         poll() {
-            const { children } = this.state;
+            const { onRequestRemove } = this.props;
+            onRequestRemove && onRequestRemove(null, 0);
 
-            if (children.length > 0) {
-                this.setState((prevState) => ({
-                    ...prevState,
-                    children: prevState.children.slice(1),
-                }), () => this.state.children.length == 0 
-                    && clearInterval(this.state.pollId));
-            }
+            console.info('rolling')
         }
 
         @autobind
-        handleClick() {
+        handleClick(event, index) {
+            const { onRequestRemove } = this.props;
+            onRequestRemove && onRequestRemove(event, index);
         }
 
         componentWillReceiveProps(nextProps) {
-            const { children, delay } = nextProps;
+            clearInterval(this.state.pollId);
 
-            if (delay > 0) {
-                this.setState(() => ({
+            const { children, delay } = nextProps;
+            const newChildren = React.Children.toArray(children);
+
+            if (delay > 0 && newChildren.length > 0) {
+                this.setState({
                     pollId: setInterval(this.poll, delay * 1E3),
-                    children: React.Children.toArray(children),
-                }));
+                })
             }
         }
 
         componentWillMount() {
-            const { delay } = this.props;
+            const { children, delay } = this.props;
+            const newChildren = React.Children.toArray(children);
 
-            if (delay > 0) {
+            if (delay > 0 && newChildren.length > 0) {
                 this.setState({
                     pollId: setInterval(this.poll, delay * 1E3),
                 });
@@ -77,18 +74,21 @@ const Controller = (View) =>
         }
 
         componentWillUnmount() {
-            const { delay } = this.props;
-
-            if (delay > 0) {
+            if (this.state.pollId != 0)
                 clearInterval(this.state.pollId);
-            }
         }
 
         render() {
-            const { children } = this.state;
+            const { children } = this.props;
             const newProps = {
                 ...this.props,
-                children,
+                children: React.Children.map(children, (item, index) => ({
+                    ...item,
+                    props: {
+                        ...item.props,
+                        onClick: (event) => this.handleClick(event, index),
+                    },
+                })),
             };
 
             return <View { ...newProps } />;
