@@ -39,8 +39,6 @@ const Controller = (View) =>
         poll() {
             const { onRequestRemove } = this.props;
             onRequestRemove && onRequestRemove(null, 0);
-
-            console.info('rolling')
         }
 
         @autobind
@@ -57,7 +55,7 @@ const Controller = (View) =>
 
             if (delay > 0 && newChildren.length > 0) {
                 this.setState({
-                    pollId: setInterval(this.poll, delay * 1E3),
+                    pollId: setInterval(this.poll, delay),
                 })
             }
         }
@@ -68,7 +66,7 @@ const Controller = (View) =>
 
             if (delay > 0 && newChildren.length > 0) {
                 this.setState({
-                    pollId: setInterval(this.poll, delay * 1E3),
+                    pollId: setInterval(this.poll, delay),
                 });
             }
         }

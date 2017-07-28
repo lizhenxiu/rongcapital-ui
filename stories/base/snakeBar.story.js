@@ -78,7 +78,7 @@ class Tester extends Component {
 }
 
 storiesOf('base.SnakeBar', module)
-    .add('initialize by items', () => (
+    .add('initialize by default', () => (
         <AppTheme>
             <SnakeBar />
         </AppTheme>
@@ -118,7 +118,7 @@ storiesOf('base.SnakeBar', module)
     ))
     .add('initialize by delay 5', () => (
         <AppTheme>
-            <SnakeBar position={ POSITION.CENTER } delay={ 5 }>
+            <SnakeBar position={ POSITION.CENTER } delay={ 5E3 }>
                 <SnakeBar.Message>
                     Hello World
                 </SnakeBar.Message>
@@ -150,6 +150,6 @@ storiesOf('base.SnakeBar', module)
     ))
     .add('initialize by delay 3 and remove', () => (
         <AppTheme>
-            <Tester delay={ 3 } />
+            <Tester delay={ 3E3 } />
         </AppTheme>
     ));
