@@ -7,7 +7,6 @@ import range from 'ramda/src/range';
 import remove from 'ramda/src/remove';
 import map from 'ramda/src/map';
 import compose from 'ramda/src/compose';
-import clone from 'ramda/src/clone';
 import append from 'ramda/src/append';
 
 import autobind from 'core-decorators/lib/autobind';
@@ -50,7 +49,7 @@ class Tester extends Component {
 
     @autobind
     handleRemove(event, index) {
-        this.setState(({ messages }, props) => ({
+        this.setState(({ messages }) => ({
             messages: remove(index, 1, messages),
         }));
     }

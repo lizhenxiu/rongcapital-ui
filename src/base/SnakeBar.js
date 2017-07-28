@@ -56,7 +56,7 @@ const Controller = (View) =>
             if (delay > 0 && newChildren.length > 0) {
                 this.setState({
                     pollId: setInterval(this.poll, delay),
-                })
+                });
             }
         }
 

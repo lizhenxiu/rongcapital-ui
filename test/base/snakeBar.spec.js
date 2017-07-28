@@ -54,11 +54,11 @@ describe.only('base component snakeBar', () => {
             expect(handleRemove.notCalled).to.equal(true);
             wrapper.unmount();
             done();
-        }, delay);
+        }, delay + 1E3);
     });
 
     it('initialize by delay 5', (done) => {
-        const delay = 2E3;
+        const delay = 1E3;
         const handleRemove = sinon.spy();
         const wrapper = mount(
             <SnakeBar delay={ delay } onRequestRemove={ handleRemove }>
