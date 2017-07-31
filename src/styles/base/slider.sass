@@ -1,0 +1,54 @@
+$size: 30px
+$space: 40px
+
+.slider
+  display: block
+  position: relative
+  white-space: nowrap
+  user-select: none
+  > div
+    height: $size
+    line-height: $size
+    &:first-child, &:last-child
+      position: absolute
+      width: $space
+      top: 0
+      text-align: center
+    &:first-child
+      left: 0
+    &:last-child
+      right: 0
+    &:nth-child(2)
+      padding: 0 $space 0
+
+.line-container
+  display: block
+  height: $size
+  position: relative
+  margin: 0 10px
+
+.line-progress
+  height: 2px
+  position: absolute
+  width: 100%
+  top: 50%
+  transform: translateY(-50%)
+
+.line-progress-bar
+  background: red
+
+.line-progress-val
+  background: blue
+
+.selector
+  $size: 20px
+  display: block
+  height: $size
+  width: $size
+  box-sizing: border-box
+  border: solid 1px #EFEFEF
+  border-radius: 50%
+  position: absolute
+  top: 50%
+  margin: $size/-2 0 0 $size/-2
+  background: white

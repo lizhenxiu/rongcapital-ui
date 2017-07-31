@@ -8,22 +8,22 @@ import * as componentStyles from '../styles/base/actionBar.sass';
 const ActionBar = ({ children }) =>
     <ul className={ componentStyles['action-bar'] }>{ children }</ul>;
 
-ActionBar.Item = ({ children, right }) => 
+ActionBar.Item = ({ children, right }) =>
     <li className={ clazz({
-        [componentStyles.right]: right,
+        [componentStyles.right]: right
     }) }>{ children }</li>;
 
 ActionBar.propTypes = {
-    children: PropTypes.oneOfType([ PropTypes.element, PropTypes.arrayOf(PropTypes.element) ]),
+    children: PropTypes.oneOfType([ PropTypes.element, PropTypes.arrayOf(PropTypes.element) ])
 };
 
 ActionBar.Item.displayName = 'ActionBarItem';
 ActionBar.Item.propTypes = {
     right: PropTypes.bool,
-    children: PropTypes.any,
+    children: PropTypes.any
 };
 ActionBar.Item.defaultProps = {
-    right: false,
+    right: false
 };
 
 export default ActionBar;

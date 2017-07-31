@@ -4,18 +4,17 @@ import { storiesOf } from '@storybook/react';
 import { ScrollView } from '../../src/core';
 
 const temp = {
-    height: 100,
+    height: 100
 };
 
 class Wrapper extends Component {
-
     state = {
-        items: ['Hello', 'World', 'Some', 'One'],
+        items: ['Hello', 'World', 'Some', 'One']
     };
 
     intervalID = 0;
 
-    componentDidMount() {
+    componentDidMount () {
         this.intervalID = setInterval(() => {
             const newItems = [ ...this.state.items ];
             newItems.push(`newItem ${ newItems.length }`);
@@ -26,11 +25,11 @@ class Wrapper extends Component {
         }, 2E3);
     }
 
-    componentWillUnmount() {
+    componentWillUnmount () {
         clearInterval(this.intervalID);
     }
 
-    render() {
+    render () {
         const { items } = this.state;
         return (
             <ScrollView width={ 500 } height={ 300 }>

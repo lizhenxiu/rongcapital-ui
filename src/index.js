@@ -1,18 +1,18 @@
 import './styles/appPreset.sass';
 
-export { 
-    View, 
+export {
+    View,
     CollectionView,
     GridView,
     ListView,
     NavigationView,
-    ScrollView,
+    ScrollView
 } from './core';
 
 export {
     Breadcrumbs,
     ActionBar,
-    SnakeBar,
+    SnakeBar
 } from './base';
 
 import AppTheme from './AppTheme';

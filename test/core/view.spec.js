@@ -1,14 +1,13 @@
 /* global describe, it */
 import React from 'react';
-//import sinon from 'sinon';
+// import sinon from 'sinon';
 import { expect } from 'chai';
-import { /*mount, render,*/ shallow } from 'enzyme';
+import { /* mount, render,*/ shallow } from 'enzyme';
 
 import { View } from '../../src';
 import * as componentStyles from '../../src/styles/core/view.sass';
 
 describe('core component view', () => {
-
     it('initialize by default', () => {
         const wrapper = shallow(<View />);
         expect(wrapper.type()).to.equal('div');

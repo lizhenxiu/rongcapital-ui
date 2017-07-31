@@ -22,11 +22,10 @@ const ItemView = ({ children, next, prev }) => (
 ItemView.propTypes = {
     children: PropTypes.string,
     prev: PropTypes.func,
-    next: PropTypes.func,
+    next: PropTypes.func
 };
 
 describe('core component navigationView', () => {
-
     it('initialize by default', () => {
         const wrapper = shallow(<NavigationView />);
         expect(wrapper.hasClass(componentStyles.navigationView));
@@ -53,7 +52,7 @@ describe('core component navigationView', () => {
                 <ItemView>items 4</ItemView>
             </NavigationView>
         );
-        
+
         expect(wrapper.find(ItemView)).to.have.lengthOf(5);
         expect(wrapper.prop('index')).to.equal(0);
     });
@@ -96,7 +95,7 @@ describe('core component navigationView', () => {
         const afterNext = sinon.spy();
 
         const wrapper = mount(
-            <NavigationView width={ 200 } height={ 100 } 
+            <NavigationView width={ 200 } height={ 100 }
                 beforePrev={ beforePrev }
                 afterPrev={ afterPrev }
                 beforeNext={ beforeNext }

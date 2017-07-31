@@ -5,6 +5,6 @@ const prodConfig = require('./webpack.config.production');
 
 module.exports = merge(prodConfig, {
     plugins: [
-        new BundleAnalyzerPlugin(),
-    ],
+        new BundleAnalyzerPlugin()
+    ]
 });

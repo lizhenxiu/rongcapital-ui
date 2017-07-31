@@ -7,7 +7,6 @@ import { GridView } from '../../src';
 import * as componentStyles from '../../src/styles/core/gridView.sass';
 
 describe('core component gridView', () => {
-    
     it('initialize by default', () => {
         const wrapper = shallow(<GridView />);
         expect(wrapper.hasClass(componentStyles['grid-view'])).to.equal(true);
@@ -32,7 +31,7 @@ describe('core component gridView', () => {
         expect(wrapper.find('tr')).to.have.lengthOf(3);
         expect(wrapper.find('td')).to.have.lengthOf(6);
         expect(wrapper.find('table div')).to.have.lengthOf(4);
-        wrapper.find('table div').forEach((item, index) => 
+        wrapper.find('table div').forEach((item, index) =>
             expect(item.text()).to.equal(`item ${index}`));
     });
 
@@ -51,12 +50,17 @@ describe('core component gridView', () => {
             </GridView>
         );
         expect(wrapper.find('table div')).to.have.lengthOf(6);
-        wrapper.find('table div').forEach((item, index) => 
+        wrapper.find('table div').forEach((item, index) =>
             expect(item.text()).to.equal(`item ${index}`));
     });
 
     it('initialize by 3 rows, 2 columns and cellLayout func', () => {
-        const cellLayout = (cells) => (cells[0].rowspan = 2, cells[2].isMounted = false, cells);
+        const cellLayout = (cells) => {
+            cells[0].rowspan = 2;
+            cells[2].isMounted = false;
+            return cells;
+        };
+
         const wrapper = shallow(
             <GridView rows={ 3 } columns={ 2 } cellLayout={ cellLayout }>
                 <div>item 0</div>
@@ -68,7 +72,7 @@ describe('core component gridView', () => {
             </GridView>
         );
         expect(wrapper.find('table div')).to.have.lengthOf(5);
-        wrapper.find('table div').forEach((item, index) => 
+        wrapper.find('table div').forEach((item, index) =>
             expect(item.text()).to.equal(`item ${index}`));
     });
 });

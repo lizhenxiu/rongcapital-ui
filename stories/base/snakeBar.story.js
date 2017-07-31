@@ -14,7 +14,7 @@ import autobind from 'core-decorators/lib/autobind';
 import { AppTheme, SnakeBar } from '../../src';
 
 const POSITION = SnakeBar.POSITION;
-//const THEME = AppTheme.THEME;
+// const THEME = AppTheme.THEME;
 
 const create = (content) =>
     <SnakeBar.Message key={ content }>{ content.toString() }</SnakeBar.Message>;
@@ -22,18 +22,17 @@ const mapItems = (fn) => (arr) => map(fn, arr);
 const generate = compose(mapItems(create), range);
 
 class Tester extends Component {
-
     counter = 5;
 
     static propTypes = {
-        delay: PropTypes.number,
+        delay: PropTypes.number
     };
 
     static defaultProps = {
-        delay: 0,
+        delay: 0
     };
 
-    constructor(props) {
+    constructor (props) {
         super(props);
         this.state = {
             messages: generate(0, this.counter)
@@ -41,32 +40,32 @@ class Tester extends Component {
     }
 
     @autobind
-    handleAppend() {
+    handleAppend () {
         this.setState(({ messages }) => ({
-            messages: append(create(this.counter), messages),
+            messages: append(create(this.counter), messages)
         }), () => ++this.counter);
     }
 
     @autobind
-    handleRemove(event, index) {
+    handleRemove (event, index) {
         this.setState(({ messages }) => ({
-            messages: remove(index, 1, messages),
+            messages: remove(index, 1, messages)
         }));
     }
 
-    render() {
+    render () {
         const { messages } = this.state;
         const { delay } = this.props;
         return (
             <div>
-                <SnakeBar 
-                    position={ POSITION.CENTER } 
-                    delay={ delay } 
+                <SnakeBar
+                    position={ POSITION.CENTER }
+                    delay={ delay }
                     onRequestRemove={ this.handleRemove }>
                     { messages }
                 </SnakeBar>
                 {
-                    delay != 0 && 
+                    delay !== 0 &&
                     <div>
                         <button onClick={ compose(this.handleAppend, action('append message')) }>Append Message</button>
                     </div>

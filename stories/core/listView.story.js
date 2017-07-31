@@ -5,6 +5,22 @@ import { ListView } from '../../src/core';
 
 const MODE = ListView.MODE;
 
+const itemLayout = (item, index) => {
+    if (index % 2 === 0) {
+        return React.cloneElement(item, {
+            ...item.props,
+            ...{
+                style: {
+                    backgroundColor: 'red',
+                    color: 'white'
+                }
+            }
+        });
+    }
+
+    return item;
+};
+
 storiesOf('core.ListView', module)
     .add('initialize by default', () => (
         <ListView />
@@ -56,19 +72,3 @@ storiesOf('core.ListView', module)
             <div>item 5</div>
         </ListView>
     ));
-
-const itemLayout = (item, index) => {
-    if (index % 2 == 0) {
-        return React.cloneElement(item, {
-            ...item.props,
-            ...{
-                style: {
-                    backgroundColor: 'red',
-                    color: 'white',
-                },
-            },
-        });
-    }
-
-    return item;
-};

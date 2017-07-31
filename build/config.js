@@ -1,6 +1,6 @@
 import { configure } from '@storybook/react';
 
-function loadStories() {
+function loadStories () {
     require('../stories/core/view.story.js');
     require('../stories/core/collectionView.story.js');
     require('../stories/core/gridView.story.js');
@@ -11,6 +11,7 @@ function loadStories() {
     require('../stories/base/breadcrumbs.story.js');
     require('../stories/base/actionBar.story.js');
     require('../stories/base/snakeBar.story.js');
+    require('../stories/base/slider.story.js');
     // You can require as many stories as you need.
 }
 

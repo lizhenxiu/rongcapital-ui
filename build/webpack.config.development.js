@@ -4,7 +4,7 @@ const baseConfig = require('./webpack.config.base');
 
 module.exports = merge(baseConfig, {
     output: Object.assign({}, baseConfig.output, {
-        filename: '[name].dev.js',
+        filename: '[name].dev.js'
     }),
     // https://webpack.js.org/configuration/devtool/
     devtool: 'source-map',
@@ -14,10 +14,10 @@ module.exports = merge(baseConfig, {
         modules: true,
         reasons: true,
         assets: true,
-        cache: true,
+        cache: true
     },
     watchOptions: {
-        aggregateTimeout: 500, //ms, default is 300
+        aggregateTimeout: 500, // ms, default is 300
         poll: true
-    },
+    }
 });

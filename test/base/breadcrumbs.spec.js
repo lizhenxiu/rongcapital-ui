@@ -14,7 +14,7 @@ describe('base component breadcrumbs', () => {
 
         expect(wrapper.hasClass(componentStyles.breadcrumbs)).to.equal(true);
     });
-    
+
     it('initialize by some child', () => {
         const wrapper = shallow(
             <Breadcrumbs>

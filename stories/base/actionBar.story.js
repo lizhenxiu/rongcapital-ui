@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { ActionBar } from '../../src/base';
 
-storiesOf('base ActionBar', module)
+storiesOf('base.ActionBar', module)
     .add('initialize by items', () => (
         <ActionBar>
             <ActionBar.Item>Yes Master</ActionBar.Item>

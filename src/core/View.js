@@ -10,7 +10,7 @@ import * as componentStyles from '../styles/core/view.sass';
 const mergeStyle = memoize(defaults);
 const defaultStyles = {
     width: 'auto',
-    height: 'auto',
+    height: 'auto'
 };
 
 class View extends Component {
@@ -22,11 +22,11 @@ class View extends Component {
         children: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.arrayOf(PropTypes.element)])
     };
 
-    constructor(props, context) {
+    constructor (props, context) {
         super(props, context);
     }
 
-    render() {
+    render () {
         const { width, height, inline, className, children } = this.props;
         const styles = mergeStyle(defaultStyles, { width, height });
         const classNames = clazz(className, componentStyles.view, {

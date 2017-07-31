@@ -8,7 +8,6 @@ import * as viewStyles from '../../src/styles/core/view.sass';
 import * as collectionViewStyles from '../../src/styles/core/collectionView.sass';
 
 describe('core component collectionView', () => {
-
     it('initialize by required properties', () => {
         const wrapper = shallow(<CollectionView />);
         expect(wrapper.type()).to.equal('div');
@@ -27,7 +26,7 @@ describe('core component collectionView', () => {
     });
 
     it('initialize by more children and itemLayout', () => {
-        const itemLayout = (item, index) => ( 
+        const itemLayout = (item, index) => (
             React.cloneElement(item, {
                 ...item.props,
                 ...{
@@ -36,7 +35,7 @@ describe('core component collectionView', () => {
                         display: 'inline-block',
                         right: 50 * index,
                         width: 50,
-                        height: 50,
+                        height: 50
                     }
                 }
             }));

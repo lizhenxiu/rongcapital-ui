@@ -36,7 +36,7 @@ describe('base component snakeBar', () => {
                 <SnakeBar.Message>Hello World</SnakeBar.Message>
             </SnakeBar>
         );
-        
+
         const targets = wrapper.find(SnakeBar.Message);
         expect(targets).to.have.lengthOf(1);
     });

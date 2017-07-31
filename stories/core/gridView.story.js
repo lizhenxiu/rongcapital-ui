@@ -3,6 +3,16 @@ import { storiesOf } from '@storybook/react';
 
 import { GridView } from '../../src/core';
 
+const cellLayout = (cells) => {
+    cells[0].rowspan = 2;
+    cells[0].colspan = 2;
+    cells[1].isMounted = false;
+    cells[3].isMounted = false;
+    cells[4].isMounted = false;
+
+    return cells;
+};
+
 storiesOf('core.GridView', module)
     .add('initialize by default', () => (
         <GridView />
@@ -45,13 +55,3 @@ storiesOf('core.GridView', module)
             <div>item 12</div>
         </GridView>
     ));
-
-const cellLayout = (cells) => {
-    cells[0].rowspan = 2;
-    cells[0].colspan = 2;
-    cells[1].isMounted = false;
-    cells[3].isMounted = false;
-    cells[4].isMounted = false;
-
-    return cells;
-};

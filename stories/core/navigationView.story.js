@@ -20,7 +20,7 @@ const ItemView = ({ children, next, prev }) => (
 ItemView.propTypes = {
     children: PropTypes.any,
     next: PropTypes.func,
-    prev: PropTypes.func,
+    prev: PropTypes.func
 };
 
 /* eslint-disable no-console */

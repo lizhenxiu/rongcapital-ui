@@ -7,7 +7,6 @@ import { ListView } from '../../src';
 import * as componentStyles from '../../src/styles/core/listView.sass';
 
 describe('core component listView', () => {
-
     it('initialize by default', () => {
         const wrapper = shallow(<ListView />);
         expect(wrapper.hasClass(componentStyles['list-view'])).to.equal(true);
@@ -31,15 +30,15 @@ describe('core component listView', () => {
 
     it('initialize by itemLayout', () => {
         const itemLayout = (item, index) => {
-            if (index % 2 == 0) {
+            if (index % 2 === 0) {
                 return React.cloneElement(item, {
                     ...item.props,
                     ...{
                         style: {
                             backgroundColor: 'red',
-                            color: 'white',
-                        },
-                    },
+                            color: 'white'
+                        }
+                    }
                 });
             }
 
@@ -59,7 +58,7 @@ describe('core component listView', () => {
 
         expect(wrapper.find('ul div')).to.have.lengthOf(6);
         wrapper.find('ul div').forEach((item, index) => {
-            if (index % 2 == 0) {
+            if (index % 2 === 0) {
                 expect(item.html()).to.include('color:white');
                 expect(item.html()).to.include('background-color:red');
             }

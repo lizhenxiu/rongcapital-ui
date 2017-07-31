@@ -7,34 +7,33 @@ import View from './View';
 
 import * as componentStyles from '../styles/core/navigationView.sass';
 
-const Controller = (View) =>
+const Controller = (WrappedView) =>
     class NavigationViewController extends Component {
-
         static propTypes = {
             ...View.propTypes,
             index: PropTypes.number,
             beforeNext: PropTypes.func,
             afterNext: PropTypes.func,
             beforePrev: PropTypes.func,
-            afterPrev: PropTypes.func,
+            afterPrev: PropTypes.func
         };
 
         static defaultProps = {
-            index: 0,
+            index: 0
         };
 
-        constructor(props, context) {
+        constructor (props, context) {
             super(props, context);
             // 初始化state
             const { index } = props;
             this.state = {
                 // 子视图索引状态
-                index,
+                index
             };
         }
 
         @autobind
-        next() {
+        next () {
             const index = this.state.index + 1;
             const { children } = this.props;
 
@@ -49,7 +48,7 @@ const Controller = (View) =>
         }
 
         @autobind
-        prev() {
+        prev () {
             const index = this.state.index - 1;
 
             if (index < 0) return;
@@ -62,44 +61,43 @@ const Controller = (View) =>
             });
         }
 
-        componentWillReceiveProps(nextProps) {
+        componentWillReceiveProps (nextProps) {
             this.setState(() => ({
-                index: nextProps.index,
+                index: nextProps.index
             }));
         }
 
-        render() {
+        render () {
             const newProps = {
                 next: this.next,
                 prev: this.prev,
-                index: this.state.index,
+                index: this.state.index
             };
 
-            return <View { ...this.props } { ...newProps } />;
+            return <WrappedView { ...this.props } { ...newProps } />;
         }
     };
 
 @Controller
 class NavigationView extends View {
-
-    constructor(props, context) {
+    constructor (props, context) {
         super(props, context);
     }
 
-    render() {
+    render () {
         const { children, next, prev, index } = this.props;
         const elementTree = super.render();
         const newProps = {
             ...elementTree.props,
             className: clazz(elementTree.props.className, componentStyles['navigation-view']),
-            children: React.Children.map(children, (item, idx) => 
-                idx === index ? 
-                    React.cloneElement(item, {
+            children: React.Children.map(children, (item, idx) =>
+                idx === index
+                    ? React.cloneElement(item, {
                         ...item.props,
                         next,
-                        prev,
+                        prev
                     })
-                    : void 0),
+                    : null)
         };
 
         return React.cloneElement(elementTree, newProps);

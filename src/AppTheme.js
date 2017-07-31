@@ -3,14 +3,13 @@ import PropTypes from 'prop-types';
 import THEME from './constants/theme';
 
 class AppTheme extends Component {
-
     static childContextTypes = {
-        theme: PropTypes.oneOf(Object.values(THEME)),
+        theme: PropTypes.oneOf(Object.values(THEME))
     };
 
     static propTypes = {
         theme: PropTypes.oneOf(Object.values(THEME)),
-        children: PropTypes.element,
+        children: PropTypes.element
     };
 
     static defaultProps = {
@@ -19,21 +18,21 @@ class AppTheme extends Component {
 
     static THEME = THEME;
 
-    getChildContext() {
+    getChildContext () {
         const { theme } = this.props;
         return {
-            theme 
+            theme
         };
     }
 
-    constructor(props) {
+    constructor (props) {
         super(props);
     }
 
-    render() {
+    render () {
         return (
             <div>
-                { this.props.children  }
+                { this.props.children }
             </div>
         );
     }

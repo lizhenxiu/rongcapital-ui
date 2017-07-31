@@ -25,7 +25,7 @@ const plugins = [
     // 环境定义
     new webpack.DefinePlugin({
         'process.env': {
-            NODE_ENV: '"' + process.env.NODE_ENV + '"',
+            NODE_ENV: '"' + process.env.NODE_ENV + '"'
         }
     }),
     // https://github.com/johnagan/clean-webpack-plugin
@@ -34,37 +34,37 @@ const plugins = [
         root: path.join(__dirname, '../'),
         verbose: true,
         dry: false,
-        exclude: [],
+        exclude: []
     }),
     // 文件头部说明
     new webpack.BannerPlugin({ banner: `Powered by FE @ Cube team Version ${pkg.version}`, raw: false, entryOnly: true }),
     // 分离对react等的依赖
     new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),
-    //new webpack.optimize.CommonsChunkPlugin({ name: 'manifest', chunks: [ 'vendor' ] }),
+    // new webpack.optimize.CommonsChunkPlugin({ name: 'manifest', chunks: [ 'vendor' ] }),
     // 分离CSS文件
     new ExtractTextPlugin({
         filename: '[name].sass.css',
         disable: false,
         allChunks: true
-    }),
+    })
 ];
 
 module.exports = {
     plugins,
     entry: {
         rongcapital: SRC_PATH,
-        vendor: Object.keys(vendors).filter(item => item.indexOf('.css') === -1),
+        vendor: Object.keys(vendors).filter(item => item.indexOf('.css') === -1)
     },
     output: {
-        path: DIST_PATH,
+        path: DIST_PATH
     },
     module: {
-        //noParse: /node_modules/,
+        // noParse: /node_modules/,
         rules: [
             {
                 // use babel-loader for *.js or *.jsx files
                 test: /\.js[x]?$/,
-                //loaders: __DEV__ ? ['react-hot'].concat(['babel']) : ['babel'],
+                // loaders: __DEV__ ? ['react-hot'].concat(['babel']) : ['babel'],
                 use: ['babel-loader'],
                 // important: exclude files in node_modules
                 // otherwise it's going to be really slow!
@@ -73,20 +73,20 @@ module.exports = {
             {
                 // use css-loader for *.css files
                 test: /\.css$/i,
-                use: ExtractTextPlugin.extract({ 
+                use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: 'css-loader',
+                    use: 'css-loader'
                 }),
                 exclude: /node_modules/
             },
             {
                 // use sass-loader for *.sass files
                 test: /\.sass/i,
-                use: ExtractTextPlugin.extract({ 
+                use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: [
-                        { 
-                            loader: `css-loader?modules&localIdentName=${ __DEV__ ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:8]' }`,
+                        {
+                            loader: `css-loader?modules&localIdentName=${ __DEV__ ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:8]' }`
                         },
                         {
                             loader: 'postcss-loader',
@@ -100,10 +100,10 @@ module.exports = {
                         {
                             loader: 'sass-loader',
                             options: {
-                                data: '$env: ' + process.env.NODE_ENV + ';',
+                                data: '$env: ' + process.env.NODE_ENV + ';'
                             }
-                        },
-                    ],
+                        }
+                    ]
                 }),
                 exclude: /node_modules/
             },
@@ -119,23 +119,23 @@ module.exports = {
                 // font file
                 test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
                 use: [ 'url-loader?limit=10000&minetype=application/font-woff' ]
-            }, 
+            },
             {
                 test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
                 use: [ 'url-loader?limit=10000&minetype=application/font-woff' ]
-            }, 
+            },
             {
                 test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
                 use: [ 'url-loader?limit=10000&minetype=application/octet-stream' ]
-            }, 
+            },
             {
                 test: /\.ijmap(\?v=\d+\.\d+\.\d+)?$/,
                 use: [ 'url-loader?limit=10000&minetype=application/font-woff' ]
-            }, 
+            },
             {
                 test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
                 use: [ 'file-loader' ]
-            }, 
+            },
             {
                 test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
                 use: [ 'url-loader?limit=10000&minetype=image/svg+xml' ]
@@ -146,7 +146,7 @@ module.exports = {
         extensions: ['.js', '.jsx'],
         modules: [
             path.join(__dirname, 'src'),
-            'node_modules',
+            'node_modules'
         ]
-    },
+    }
 };

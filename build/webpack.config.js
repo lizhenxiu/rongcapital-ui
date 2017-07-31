@@ -22,7 +22,7 @@ module.exports = (baseConfig, env) => {
         customConfig.plugins[4],
         new WebpackShellPlugin({
             onBuildStart: [],
-            onBuildEnd: [ STARTUP_CMD ],
+            onBuildEnd: [ STARTUP_CMD ]
         })
     );
 

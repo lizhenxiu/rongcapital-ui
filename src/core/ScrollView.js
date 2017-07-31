@@ -8,26 +8,26 @@ import View from './View';
 import * as componentStyles from '../styles/core/scrollView.sass';
 
 const defaultProps = {
-    autoHide: true,
+    autoHide: true
 };
 
 class ScrollView extends View {
     static propTypes = {
         ...View.propTypes,
         width: PropTypes.number.isRequired,
-        height: PropTypes.number.isRequired,
+        height: PropTypes.number.isRequired
     }
-    
-    constructor(props, context) {
+
+    constructor (props, context) {
         super(props, context);
     }
 
-    render() {
+    render () {
         const elementTree = super.render();
         const newProps = {
             ...elementTree.props,
             className: clazz(elementTree.props.className, componentStyles['scroll-view']),
-            children: (<Scrollbars { ...defaultProps }>{  elementTree.props.children  }</Scrollbars>),
+            children: (<Scrollbars { ...defaultProps }>{ elementTree.props.children }</Scrollbars>)
         };
         return React.cloneElement(elementTree, newProps);
     }

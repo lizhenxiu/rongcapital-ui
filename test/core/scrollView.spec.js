@@ -8,7 +8,6 @@ import * as viewStyles from '../../src/styles/core/view.sass';
 import * as componentStyles from '../../src/styles/core/scrollView.sass';
 
 describe('core component scrollView', () => {
-
     it('initialize by required properties', () => {
         const wrapper = shallow(<ScrollView width={ 500 } height={ 300 } />);
         expect(wrapper.type()).to.equal('div');
@@ -38,7 +37,7 @@ describe('core component scrollView', () => {
         );
 
         expect(wrapper.find('.item')).to.have.lengthOf(5);
-        wrapper.find('.item').forEach((item, index) => 
+        wrapper.find('.item').forEach((item, index) =>
             expect(item.text()).to.equal(`items ${ index + 1 }`)
         );
     });

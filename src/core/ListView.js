@@ -8,43 +8,42 @@ import * as componentStyles from '../styles/core/listView.sass';
 
 const MODE = {
     VERTICAL: 0,
-    HORIZONTAL: 1,
+    HORIZONTAL: 1
 };
 
-class ListView extends CollectionView {
+const listLayout = (element, index) =>
+    <li key={ index }>{ element }</li>;
 
+class ListView extends CollectionView {
     static propTypes = {
         ...CollectionView.propTypes,
-        mode: PropTypes.oneOf(Object.values(MODE)),
+        mode: PropTypes.oneOf(Object.values(MODE))
     };
 
     static defaultProps = {
-        ...CollectionView.defaultProps,
+        ...CollectionView.defaultProps
     };
 
     static MODE = MODE;
 
-    constructor(props, context) {
+    constructor (props, context) {
         super(props, context);
     }
 
-    render() {
+    render () {
         const { mode } = this.props;
         const elementTree = super.render();
         const { children, ...others } = elementTree.props;
         const newProps = {
             ...others,
-            className: clazz(elementTree.props.className, componentStyles['list-view'], { 
-                [componentStyles['list-view-horizontal']]: mode === MODE.HORIZONTAL 
-            }),
+            className: clazz(elementTree.props.className, componentStyles['list-view'], {
+                [componentStyles['list-view-horizontal']]: mode === MODE.HORIZONTAL
+            })
         };
 
-        //return React.cloneElement(elementTree, newProps);
+        // return React.cloneElement(elementTree, newProps);
         return <ul { ...newProps }>{ React.Children.map(children, listLayout)}</ul>;
     }
 }
-
-const listLayout = (element, index) => 
-    <li key={ index }>{ element }</li>;
 
 export default ListView;

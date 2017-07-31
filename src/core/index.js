@@ -11,5 +11,5 @@ export {
     GridView,
     ListView,
     NavigationView,
-    ScrollView,
+    ScrollView
 };

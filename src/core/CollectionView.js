@@ -8,22 +8,21 @@ import * as componentStyles from '../styles/core/collectionView.sass';
 const noop = arg => arg;
 
 class CollectionView extends View {
-
     static defaultProps = {
         ...View.defaultProps,
-        itemLayout: noop,
+        itemLayout: noop
     };
 
     static propTypes = {
         ...View.propTypes,
-        itemLayout: PropTypes.func,
+        itemLayout: PropTypes.func
     };
 
-    constructor(props, context) {
+    constructor (props, context) {
         super(props, context);
     }
 
-    render() {
+    render () {
         const elementTree = super.render();
         const props = elementTree.props;
         const { children, itemLayout } = this.props;
@@ -31,7 +30,7 @@ class CollectionView extends View {
         const newProps = {
             ...props,
             className: clazz(props.className, componentStyles['collection-view']),
-            children: React.Children.map(children, itemLayout),
+            children: React.Children.map(children, itemLayout)
         };
 
         return React.cloneElement(elementTree, newProps);
