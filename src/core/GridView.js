@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clazz from 'classnames';
+import override from 'core-decorators/lib/override';
 
 import range from 'ramda/src/range';
 import memoize from 'ramda/src/memoize';
@@ -51,6 +52,7 @@ class GridView extends CollectionView {
         super(props, context);
     }
 
+    @override
     render () {
         const { rows, columns, cellLayout } = this.props;
         const cells = cellLayout(Array.from({ length: rows * columns }, (_, index) => ({

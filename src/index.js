@@ -12,7 +12,9 @@ export {
 export {
     Breadcrumbs,
     ActionBar,
-    SnakeBar
+    SnakeBar,
+    Slider,
+    RangeSlider
 } from './base';
 
 import AppTheme from './AppTheme';

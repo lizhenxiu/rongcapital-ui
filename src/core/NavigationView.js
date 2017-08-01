@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import clazz from 'classnames';
 import autobind from 'core-decorators/lib/autobind';
+import override from 'core-decorators/lib/override';
 
 import View from './View';
 
@@ -84,6 +85,7 @@ class NavigationView extends View {
         super(props, context);
     }
 
+    @override
     render () {
         const { children, next, prev, index } = this.props;
         const elementTree = super.render();

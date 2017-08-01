@@ -2,6 +2,7 @@ import React from 'react';
 import clazz from 'classnames';
 import PropTypes from 'prop-types';
 import { Scrollbars } from 'react-custom-scrollbars';
+import override from 'core-decorators/lib/override';
 
 import View from './View';
 
@@ -22,6 +23,7 @@ class ScrollView extends View {
         super(props, context);
     }
 
+    @override
     render () {
         const elementTree = super.render();
         const newProps = {
