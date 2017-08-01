@@ -4,53 +4,59 @@ $space: 40px
 .slider
   display: block
   position: relative
-  white-space: nowrap
   user-select: none
+  white-space: nowrap
+
   > div
     height: $size
     line-height: $size
-    &:first-child, &:last-child
+
+    &:first-child,
+    &:last-child
       position: absolute
-      width: $space
-      top: 0
       text-align: center
+      top: 0
+      width: $space
+
     &:first-child
       left: 0
+
     &:last-child
       right: 0
+
     &:nth-child(2)
-      padding: 0 $space 0
+      padding: 0 $space
 
 .line-container
   display: block
   height: $size
-  position: relative
   margin: 0 10px
+  position: relative
 
 .line-progress
   height: 2px
   position: absolute
-  width: 100%
   top: 50%
   transform: translateY(-50%)
+  width: 100%
 
 .line-progress-bar
-  background: red
+  background: #f00
 
 .line-progress-val
-  background: blue
+  background: #00f
 
 .selector,
 .selector-left,
 .selector-right
   $size: 20px
+  background: #fff
+  border: solid 1px #efefef
+  border-radius: 50%
+  box-sizing: border-box
   display: block
   height: $size
-  width: $size
-  box-sizing: border-box
-  border: solid 1px #EFEFEF
-  border-radius: 50%
+  margin: ($size / -2) 0 0 ($size / -2)
   position: absolute
   top: 50%
-  margin: ($size/-2) 0 0 ($size/-2)
-  background: white
+  width: $size
