@@ -13,13 +13,20 @@ const defaultStyles = {
     height: 'auto'
 };
 
+const noop = arg => arg;
+
 class View extends Component {
+    static defaultProps = {
+        onClick: noop
+    };
+
     static propTypes = {
         width: PropTypes.number,
         height: PropTypes.number,
         className: PropTypes.string,
         inline: PropTypes.bool,
-        children: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.arrayOf(PropTypes.element)])
+        children: PropTypes.oneOfType([PropTypes.string, PropTypes.element, PropTypes.arrayOf(PropTypes.element)]),
+        onClick: PropTypes.func
     };
 
     constructor (props, context) {
@@ -27,14 +34,23 @@ class View extends Component {
     }
 
     render () {
-        const { width, height, inline, className, children } = this.props;
+        const {
+            width,
+            height,
+            inline,
+            className,
+            children,
+            onClick
+        } = this.props;
+
         const styles = mergeStyle(defaultStyles, { width, height });
         const classNames = clazz(className, componentStyles.view, {
             [componentStyles.inline]: inline
         });
 
         return (
-            <div className={ classNames } style={ styles }>{ children }</div>
+            <div className={ classNames } style={ styles }
+                onClick={ onClick }>{ children }</div>
         );
     }
 }
