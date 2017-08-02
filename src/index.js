@@ -14,7 +14,8 @@ export {
     ActionBar,
     SnakeBar,
     Slider,
-    RangeSlider
+    RangeSlider,
+    Switch,
 } from './base';
 
 import AppTheme from './AppTheme';

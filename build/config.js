@@ -12,6 +12,8 @@ function loadStories () {
     require('../stories/base/actionBar.story.js');
     require('../stories/base/snakeBar.story.js');
     require('../stories/base/slider.story.js');
+    require('../stories/base/switch.story.js');
+
     // You can require as many stories as you need.
 }
 
