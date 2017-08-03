@@ -62,8 +62,8 @@ const Controller = (View) =>
 				height: '30px' ,
 				className: clazz(componentStyles['switch'],{
 					[componentStyles['switch-on']] : this.state.isOpen,
-					[componentStyles['switch-off']] : !this.state.isOpen ,
-
+					[componentStyles['switch-off']] : !this.state.isOpen,
+					[componentStyles['switch-disabled']] : this.state.disabled,
 				}),
 				onClick: this.handleClickSwitch,
 			}
